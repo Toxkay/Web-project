@@ -1,0 +1,78 @@
+/* Authentication Page Styles */
+.auth {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+}
+
+.auth h2 {
+    font-size: 35px;
+    margin-bottom: 15px;
+    color: antiquewhite;
+}
+
+.auth form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+.auth input {
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.auth button {
+    padding: 10px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    background: crimson;
+    color: white;
+    cursor: pointer;
+}
+
+.auth .google-login {
+    background: #fff;
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+}
+
+.auth .google-login img {
+    width: 20px;
+    height: 20px;
+}
+
+.auth::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../images/Home.jpg")
+    no-repeat center center/cover;
+    filter: blur(25px) brightness(60%);
+    z-index: -1;
+}
+
+p{
+    color: antiquewhite;
+
+}
+
+.auth .google-login {
+    color: black;
+    text-align: center;
+    
+}
