@@ -1,4 +1,16 @@
 /* Authentication Page Styles */
+<<<<<<< HEAD
+=======
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    justify-content: space-between;
+
+}
+
+>>>>>>> 83658c0 (last version worked on)
 .auth {
     display: flex;
     flex-direction: column;
@@ -46,6 +58,10 @@
     justify-content: center;
     gap: 10px;
     padding: 10px;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 83658c0 (last version worked on)
 }
 
 .auth .google-login img {
@@ -66,13 +82,61 @@
     z-index: -1;
 }
 
+<<<<<<< HEAD
 p{
     color: antiquewhite;
+=======
+.auth a {
+    text-decoration: none;
+    color: white;
+    background: steelblue;
+    padding: 5px 12px;
+    border-radius: 5px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: rgba(255, 255, 255, 0.1);
+    z-index: 1000;
+
+}
+
+.center-nav {
+    display: flex;
+    list-style: none;
+    flex: 1;
+    justify-content: center;
+    padding-left: 0;
+    text-decoration: none;
+
+}
+
+.center-nav a {
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+}
+
+p{
+    color: antiquewhite;
+    font-size: 18px;
+    margin-top: 20px;
+>>>>>>> 83658c0 (last version worked on)
 
 }
 
 .auth .google-login {
     color: black;
     text-align: center;
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> 83658c0 (last version worked on)
 }
