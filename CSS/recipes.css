@@ -1,0 +1,148 @@
+/* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f8f5f2;
+    color: #333;
+}
+
+/* Header styles */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px 50px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Center navigation */
+.center-nav {
+    display: flex;
+    list-style: none;
+}
+
+.center-nav li {
+    margin: 0 15px;
+}
+
+.center-nav li a {
+    text-decoration: none;
+    color: darkred;
+    font-size: 18px;
+    font-weight: 600;
+    transition: color 0.3s ease-in-out;
+}
+
+.center-nav li a:hover {
+    color: red;
+}
+
+/* Right navigation */
+.right-nav {
+    display: flex;
+    list-style: none;
+}
+
+.right-nav li {
+    margin-left: 15px;
+}
+
+.right-nav li a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    transition: color 0.3s ease-in-out;
+}
+
+
+.right-nav .signup {
+    background: darkred;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+.right-nav .signup:hover {
+    background: darkred;
+}
+
+/* Recipe section */
+.rep {
+    padding: 100px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.recipe-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* Recipe Cards */
+.recipe-card {
+    background: white;
+    padding: 18px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.recipe-card:hover {
+    transform: scale(1.30);
+
+}
+
+.recipe-card h2 {
+    color: #3D3BF3;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.recipe-card p {
+    color: #555;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.recipe-card a {
+    text-decoration: none;
+    background: #5E1675;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background 0.3s ease-in-out;
+}
+
+.rep::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../images/Home.jpg") no-repeat center center/cover;
+    filter: blur(5px) brightness(50%);
+    z-index: -1;
+}
+
+

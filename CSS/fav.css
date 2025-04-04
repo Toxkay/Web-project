@@ -1,0 +1,258 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    /*background-color: #f8f5f2;*/
+    color: #333;
+}
+
+/* Header styles */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px 50px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Center navigation */
+.center-nav {
+    display: flex;
+    list-style: none;
+}
+
+.center-nav li {
+    margin: 0 15px;
+}
+
+.center-nav li a {
+    text-decoration: none;
+    color: darkred;
+    font-size: 18px;
+    font-weight: 600;
+    transition: color 0.3s ease-in-out;
+}
+
+.center-nav li a:hover {
+    color: red;
+}
+
+/* Right navigation */
+.right-nav {
+    display: flex;
+    list-style: none;
+}
+
+.right-nav li {
+    margin-left: 15px;
+}
+
+.right-nav li a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    transition: color 0.3s ease-in-out;
+}
+
+.right-nav .signup {
+    background: darkred;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+.right-nav .signup:hover {
+    background: darkred;
+}
+
+
+.main {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    color: white;
+    z-index: 1;
+}
+
+.main::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../images/Home.jpg") no-repeat center center/cover;
+    filter: blur(7px) brightness(60%);
+    z-index: -1;
+}
+
+/* Heading and paragraph styles */
+.main h1 {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.main p {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.searchForm, .favoritesList {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+    position: absolute;
+    filter: none;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    width: auto;
+}
+.searchForm input {
+    border: none;
+    border-bottom: 2px solid white;
+    color: white;
+    width: 275px;
+    font-size: 18px;
+    padding: 5px 10px;
+    outline: none;
+    transition: border-bottom 0.1s ease;
+    margin-bottom: 20px;
+    flex-direction: column;
+}
+.searchForm input:hover {
+    border-bottom: 3px solid white;
+}
+.searchForm h1 {
+    font-size: 40px;
+    font-family: sans-serif;
+    color: #ececec;
+    margin-bottom: 15px;
+}
+.searchForm input::placeholder {
+    color: #cccccc;
+    opacity: 0.7;
+}
+.searchForm button {
+    padding: 8px;
+    width: 40%;
+    border: 2px solid black;
+    border-radius: 30px;
+    transition: transform 0.1s ease, background-color 0.1s ease;
+}
+.searchForm button:hover {
+    transform: scale(1.1) translateY(-5px);
+    background-color: black;
+    color: white;
+}
+.FromDirection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Generalize styles for cards */
+.cards {
+    display: grid;
+    grid-template-columns: 400px 400px 400px;
+    list-style: none;
+    margin: 50px auto 0;
+    padding: 0;
+    max-width: 1200px;
+}
+
+.cards_item {
+    display: flex;
+    padding: 2rem;
+    justify-content: center;
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.25));
+}
+
+.card {
+    background-color: white;
+    border-radius: 0.25rem;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding-left: 30px;
+    background: repeating-linear-gradient(
+            #0000 0 calc(1.2rem - 1px),
+            #66afe1 0 1.2rem
+    )
+    right bottom / 100% 100%,
+    linear-gradient(red 0 0) 30px 0 / 2px 100% #fff;
+    background-repeat: no-repeat;
+    line-height: 1.2rem;
+    mask: radial-gradient(circle 0.8rem at 2px 50%, #0000 98%, #000) 0 0 / 100% 2.4rem;
+    -webkit-mask: radial-gradient(circle 0.8rem at 2px 50%, #0000 98%, #000) 0 0 / 100% 2.4rem;
+    max-width: 300px;
+}
+
+.card_image {
+    height: calc(13 * 1.2rem);
+    padding: 1.2rem 1.2rem 0;
+    position: relative;
+}
+
+.card_image:before,
+.card_image:after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    left: 60%;
+    top: 0;
+    height: 45px;
+    background: #e6e6e6b8;
+    transform: rotate(45deg);
+}
+
+.card_image:after {
+    transform: rotate(-45deg);
+    top: auto;
+    bottom: -22px;
+    left: 40%;
+}
+
+.card_image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card_content {
+    padding: 1.2rem;
+}
+
+h2.card_title,
+p {
+    margin: 1.2rem 0;
+    color: black;
+}
+
+h2.card_title {
+    font-size: 1.3em;
+    color: black;
+
+}
