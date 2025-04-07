@@ -188,6 +188,7 @@ nav {
     padding: 2rem;
     justify-content: center;
     filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.25));
+    overflow: visible;
 }
 
 .card {
@@ -195,7 +196,7 @@ nav {
     border-radius: 0.25rem;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
+    overflow: visible;
     padding-left: 30px;
     background: repeating-linear-gradient(
             #0000 0 calc(1.2rem - 1px),
@@ -255,4 +256,24 @@ h2.card_title {
     font-size: 1.3em;
     color: black;
 
+}
+
+.recipe-fav-button {
+    margin: 1rem auto 0 auto;
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid darkred;
+    border-radius: 25px;
+    background-color: darkred;
+    color: white;
+    font-size: 17px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform 0.2s ease-in-out;
+    will-change: transform;
+}
+
+
+.recipe-fav-button:hover {
+    transform: scale(1.2);
 }
