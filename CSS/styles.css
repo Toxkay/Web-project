@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
@@ -66,7 +66,6 @@ nav {
   transition: color 0.3s ease-in-out;
 }
 
-
 .right-nav .signup {
   background: darkred;
   color: white;
@@ -78,7 +77,6 @@ nav {
 .right-nav .signup:hover {
   background: darkred;
 }
-
 
 .main {
   position: relative;
@@ -263,9 +261,8 @@ nav {
   font-size: 1.3em;
 }
 
-
-
-.searchForm, .favoritesList  {
+.searchForm,
+.favoritesList {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -350,18 +347,19 @@ nav {
   overflow: hidden;
   padding-left: 30px;
   background: repeating-linear-gradient(
-          #0000 0 calc(1.2rem - 1px),
-          #66afe1 0 1.2rem
-  )
-  right bottom / 100% 100%,
-  linear-gradient(red 0 0) 30px 0 / 2px 100% #fff;
+        #0000 0 calc(1.2rem - 1px),
+        #66afe1 0 1.2rem
+      )
+      right bottom / 100% 100%,
+    linear-gradient(red 0 0) 30px 0 / 2px 100% #fff;
   background-repeat: no-repeat;
   line-height: 1.2rem;
-  mask: radial-gradient(circle 0.8rem at 2px 50%, #0000 98%, #000) 0 0 /
-    100% 2.4rem;
+  mask: radial-gradient(circle 0.8rem at 2px 50%, #0000 98%, #000) 0 0 / 100%
+    2.4rem;
   -webkit-mask: radial-gradient(circle 0.8rem at 2px 50%, #0000 98%, #000) 0 0 /
     100% 2.4rem;
   max-width: 300px;
+  padding-bottom: 20px;
 }
 
 .card_image {
@@ -396,6 +394,8 @@ nav {
 }
 
 .card_content {
+  display: flex;
+  flex-direction: column;
   padding: 1.2rem;
 }
 
@@ -406,6 +406,10 @@ p {
 
 h2.card_title {
   font-size: 1.3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
 }
 
 .about {
@@ -454,4 +458,25 @@ h2.card_title {
 
 .about ul li {
   margin-bottom: 15px;
+}
+
+.recipe-button {
+  margin: 0.5rem auto auto auto;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid darkred;
+  border-radius: 25px;
+  padding: 10px 15px;
+
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+  font-family: sans-serif;
+  background-color: darkred;
+  font-weight: 700;
+  transition: transform 0.1s ease-in-out;
+}
+
+.recipe-button:hover {
+  transform: scale(1.2);
 }
