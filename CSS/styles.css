@@ -6,8 +6,21 @@
 }
 
 body {
-  background-color: #f8f5f2;
+  background: #f8f5f2 url("../images/Home.jpg") no-repeat center/cover fixed;
   color: #333;
+  padding-top: 55px;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: -2%;
+  left: -2%;
+  width: 105%;
+  height: 105%;
+  background: inherit;
+  filter: blur(5px) brightness(60%);
+  z-index: -1;
 }
 
 /* Header styles */
@@ -78,49 +91,31 @@ nav {
   background: darkred;
 }
 
-.main {
+.main, .recipe-page {
   position: relative;
-  height: 100vh;
+  height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 20px;
   color: white;
   z-index: 1;
 }
 
-.main::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url("../images/Home.jpg") no-repeat center center/cover;
-  filter: blur(7px) brightness(60%);
-  z-index: -1;
-}
-
 /* Heading and paragraph styles */
-.main h1 {
+.main h1,
+.recipe-page h1 {
   font-size: 50px;
   margin-bottom: 15px;
 }
 
-.main p {
+.main p,
+.recipe-page p {
   font-size: 30px;
   margin-bottom: 20px;
 }
-.searchBg {
-  background: url("../images/Home.jpg") no-repeat center center/cover;
-  height: 100%;
-  width: 100%;
-  filter: blur(5px) brightness(60%);
-  position: absolute;
-  z-index: -1;
-}
+
 .searchForm {
   display: flex;
   flex-direction: column;
@@ -135,6 +130,7 @@ nav {
   z-index: 1;
   width: auto;
 }
+
 .searchForm input {
   border: none;
   border-bottom: 2px solid white;
@@ -212,6 +208,8 @@ nav {
     linear-gradient(red 0 0) 30px 0 / 2px 100% #fff;
   background-repeat: no-repeat;
   line-height: 1.2rem;
+  mask: radial-gradient(circle 0.8rem at 2px 50%, #0000 98%, #000) 0 0 /
+    100% 2.4rem;
   -webkit-mask: radial-gradient(circle 0.8rem at 2px 50%, #0000 98%, #000) 0 0 /
     100% 2.4rem;
   max-width: 300px;
@@ -415,22 +413,10 @@ h2.card_title {
 .about {
   position: relative;
   min-height: 100vh;
-  padding: 100px 40px;
+  padding: 25px 40px;
   color: white;
   z-index: 1;
   text-align: center;
-}
-
-.about::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url("../images/Home.jpg") no-repeat center center/cover;
-  filter: blur(7px) brightness(60%);
-  z-index: -1;
 }
 
 .about h1 {
@@ -479,4 +465,21 @@ h2.card_title {
 
 .recipe-button:hover {
   transform: scale(1.2);
+}
+
+.recipe-page {
+  height: 100vh;
+}
+
+.recipe_image {
+  width: calc(15 * 2rem);
+  padding: 2.5rem 2.5rem 0;
+  position: relative;
+}
+
+.recipe_image img {
+  border-radius: 5%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
