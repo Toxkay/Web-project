@@ -83,15 +83,24 @@ nav {
   background: darkred;
   color: white;
   padding: 8px 15px;
-  border-radius: 5px;
+  border-radius: 12px;
   font-weight: 600;
 }
 
 .right-nav .signup:hover {
-  background: darkred;
+  text-decoration: none;
+  background-color: red;
+  color: white;
+  border-radius: 12px;
+  font-weight: bold;
+  font-family: sans-serif;
+  transform: scale(1.5);
+  transition: transform  0.3s ease ;
+  z-index: 1;
 }
 
-.main, .recipe-page {
+.main,
+.recipe-page {
   position: relative;
   height: 90vh;
   display: flex;
@@ -208,8 +217,8 @@ nav {
     linear-gradient(red 0 0) 30px 0 / 2px 100% #fff;
   background-repeat: no-repeat;
   line-height: 1.2rem;
-  mask: radial-gradient(circle 0.8rem at 2px 50%, #0000 98%, #000) 0 0 /
-    100% 2.4rem;
+  mask: radial-gradient(circle 0.8rem at 2px 50%, #0000 98%, #000) 0 0 / 100%
+    2.4rem;
   -webkit-mask: radial-gradient(circle 0.8rem at 2px 50%, #0000 98%, #000) 0 0 /
     100% 2.4rem;
   max-width: 300px;
@@ -336,6 +345,9 @@ nav {
   justify-content: center;
   filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.25));
 }
+.hidden {
+  display: none !important;
+}
 
 .card {
   background-color: white;
@@ -453,7 +465,6 @@ h2.card_title {
   border: 2px solid darkred;
   border-radius: 25px;
   padding: 10px 15px;
-
   color: white;
   text-decoration: none;
   font-size: 17px;
@@ -485,6 +496,7 @@ h2.card_title {
 }
 
 
+
 @keyframes flash {
   0%, 100% {
     background-color: white;
@@ -501,61 +513,119 @@ h2.card_title {
   padding: 2px 5px; 
   border-radius: 4px; 
 }
-
 .slider {
   position: relative;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  width: auto;
-  height: 320px;
-  border-radius: 5%;
-  top: -300px;
-
+  bottom: 300px;
 }
 
 .slides {
-  justify-content: center;
   display: flex;
-  transition: transform 0.5s ease;
-  border-radius: 5%;
-
+  overflow-x: auto;
+  gap: 20px;
+  padding: 40px 0;
+  scroll-behavior: smooth;
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
 }
 
-.slide{
-  width: 300px;
-  transition: opacity 0.5s;
-  filter: blur(4px); 
-  opacity: 0.5;
-  border-radius: 5%;
-  transition: transform 0.5s ease;
-
+.slides::-webkit-scrollbar {
+  display: none; 
 }
 
-.slide.active{
-  filter: none;     
+.slide {
+  flex: 0 0 80%;
+  max-width: 80%;
+  height: 400px;
+  scroll-snap-align: center;
+  opacity: 0.3;
+  filter: blur(3px);
+  transition: all 0.5s ease;
+  border-radius: 30px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.05);
+  position: relative;
+}
+
+.slide.active {
   opacity: 1;
-  transition: transform 0.5s ease;
+  filter: none;
   transform: scale(1.05);
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(6px);
 }
 
-.slider button{
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 30px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.slide h3 {
+  color: white;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  z-index: 1;
+}
+
+.view-btn {
+  text-decoration: none;
+  padding: 10px 20px;
+  background-color: darkred;
+  color: white;
+  border-radius: 12px;
+  font-weight: bold;
+  font-family: sans-serif;
+  transition: background 0.3s ease;
+  z-index: 1;
+}
+
+.view-btn:hover {
+  background-color: #a40000;
+}
+
+.slider button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   border: 2px solid darkred;
   border-radius: 20px;
   padding: 5px 10px;
   color: white;
-  text-decoration: none;
-  font-size: 15px;
-  font-family: sans-serif;
   background-color: darkred;
   font-weight: 700;
-  margin-top: 3%;
-  transition: transform 0.5s ease;
+  font-size: 15px;
+  font-family: sans-serif;
+  transition: transform 0.3s ease;
+  z-index: 20;
+  cursor: pointer;
 }
 
-button:hover{
-  transform: scale(1.3);
+button:hover {
+  transform: translateY(-50%) scale(1.2);
 }
 
-.btn {
-  text-align: center;
-  align-items: center;
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
 }
