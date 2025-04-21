@@ -28,16 +28,27 @@ header {
   position: fixed;
   width: 100%;
   top: 0;
-  background: rgba(255, 255, 255, 0.9);
-  padding: 15px 50px;
+  background: rgba(200, 190, 187, 0.726);
+  padding: 7px 50px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   z-index: 1000;
 }
 
 nav {
   display: flex;
-  justify-content: space-between;
+  margin-left: auto;
+  align-items: baseline;
   align-items: center;
+  justify-content: space-around;
+}
+
+.logo img{
+  width: 175px;
+
+}
+
+.logo {
+  padding-top: 5px;
 }
 
 /* Center navigation */
@@ -66,6 +77,7 @@ nav {
 .right-nav {
   display: flex;
   list-style: none;
+  /* margin-left: auto; */
 }
 
 .right-nav li {
@@ -79,16 +91,24 @@ nav {
   transition: color 0.3s ease-in-out;
 }
 
-.right-nav .signup {
-  background: darkred;
+.right-nav li .signup {
+  background:darkred;
   color: white;
   padding: 8px 15px;
   border-radius: 5px;
   font-weight: 600;
+  transition: color 0.3s ease--out;
+
+
+}
+
+.right-nav .login {
+  font-weight: 600;
 }
 
 .right-nav .signup:hover {
-  background: darkred;
+  background:red;
+  
 }
 
 .main,
@@ -100,7 +120,7 @@ nav {
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: white;
+  color: rgba(255, 255, 255, 0.812);
   z-index: 1;
 }
 
