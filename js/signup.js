@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
             const name = document.getElementById('name').value.trim();
             const email = document.getElementById('email').value.trim();
             const password = document.getElementById('password').value.trim();
-            const terms = document.getElementById('terms').checked;
+            
             
             // Validate name
             if (!name) {
@@ -55,11 +55,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 return;
             }
             
-            // Validate terms
-            if (!terms) {
-                showError('You must agree to the terms and conditions');
-                return;
-            }
             
             // Check if email already exists
             const users = JSON.parse(localStorage.getItem('users')) || [];
@@ -97,6 +92,6 @@ document.addEventListener("DOMContentLoaded", function() {
         // Hide error after 5 seconds
         setTimeout(() => {
             signupError.style.display = 'none';
-        }, 5000);
+        }, 50000);
     }
 });

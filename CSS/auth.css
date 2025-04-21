@@ -75,7 +75,7 @@ header {
 .auth form {
     display: flex;
     flex-direction: column;
-    width: 400px; /* Wider form */
+    width: 500px; /* Wider form */
     background: rgba(255, 255, 255, 0.1);
     padding: 30px;
     border-radius: 10px;
