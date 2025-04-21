@@ -3,15 +3,27 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-}
-
-body {
-    /*background-color: #f8f5f2;*/
+  }
+  
+  body {
+    background: #f8f5f2 url("../images/Home.jpg") no-repeat center/cover fixed;
     color: #333;
-}
-
-/* Header styles */
-header {
+  }
+  
+  body::before {
+    content: "";
+    position: fixed;
+    top: -2%;
+    left: -2%;
+    width: 105%;
+    height: 105%;
+    background: inherit;
+    filter: blur(5px) brightness(60%);
+    z-index: -1;
+  }
+  
+  /* Header styles */
+  header {
     position: fixed;
     width: 100%;
     top: 0;
@@ -19,65 +31,99 @@ header {
     padding: 15px 50px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     z-index: 1000;
-}
-
-nav {
+  }
+  
+  nav {
+    display: flex;
+    margin-left: auto;
+    align-items: baseline;
+    align-items: center;
+    justify-content: space-around;
+  }
+  
+  /* Header styles */
+  header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: rgba(255, 255, 255, 0.9);
+    padding : 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+  
+  nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-/* Center navigation */
-.center-nav {
+  }
+  
+  /* Center navigation */
+  .center-nav {
     display: flex;
     list-style: none;
-}
-
-.center-nav li {
+    margin-left: 500px;
+  }
+  
+  .center-nav li {
     margin: 0 15px;
-}
-
-.center-nav li a {
+  }
+  
+  .center-nav li a {
     text-decoration: none;
     color: darkred;
     font-size: 18px;
     font-weight: 600;
     transition: color 0.3s ease-in-out;
-}
-
-.center-nav li a:hover {
+  }
+  
+  .center-nav li a:hover {
     color: red;
-}
-
-/* Right navigation */
-.right-nav {
+  }
+  
+  /* Right navigation */
+  .right-nav {
     display: flex;
     list-style: none;
-}
-
-.right-nav li {
+  }
+  
+  .right-nav li {
     margin-left: 15px;
-}
-
-.right-nav li a {
+  }
+  
+  .right-nav li a {
     text-decoration: none;
     color: black;
     font-size: 18px;
     transition: color 0.3s ease-in-out;
-}
-
-.right-nav .signup {
+  }
+  
+  
+  .right-nav .signup {
     background: darkred;
     color: white;
     padding: 8px 15px;
     border-radius: 5px;
     font-weight: 600;
-}
-
-.right-nav .signup:hover {
-    background: darkred;
-}
-
+  }
+  
+  .right-nav li .signup {
+    background:darkred;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: color 0.3s ease-out;
+  
+  }
+  .right-nav .signup:hover {
+    background:red;
+    
+  }
+  
+  .logo img{
+    width: 45px;
+  }
 
 .main {
     position: relative;
@@ -123,7 +169,7 @@ nav {
     margin-bottom: 50px;
     position: absolute;
     filter: none;
-    top: 100px;
+    top: 175px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 1;
