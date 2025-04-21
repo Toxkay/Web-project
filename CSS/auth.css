@@ -127,6 +127,9 @@ header {
     cursor: pointer;
 }
 
+.input-with-icon i{
+    color: #333;
+}
 .auth-btn {
     padding: 14px;
     font-size: 18px;
