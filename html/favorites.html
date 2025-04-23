@@ -1,36 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Imperial+Script&display=swap" rel="stylesheet">
     <link rel="icon" href="../images/platful_iconn.png" type="image/png">
-
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Your Favorites</title>
-    <link rel="stylesheet" href="../CSS/fav.css" />
+    <link rel="stylesheet" href="../CSS/styles.css" />
   </head>
-<body class = "main">
+  <body class="fav">
     <header>
       <div class="logo">
-          <a href="./Home.html"> <img src="../images/platful_iconn.png" /></a>
+        <a href="./Home.html"><img src="../images/platful_iconn.png"/><p>Plateful</p></a>
       </div>
       <nav>
-          <ul class="center-nav">
-              <li><a href="Home.html">Home</a></li>
-              <li><a href="About.html">About</a></li>
-              <li><a href="recipes.html">Recipe List</a></li>
-              <li><a href="Search.html">Search for a recipe</a></li>
-              <li><a href="favorites.html">Favorites</a></li>
-              <li><a href="admin-dashboard.html">Admin</a></li>
-          </ul>
+        <ul class="center-nav">
+          <li><a href="Home.html">Home</a></li>
+          <li><a href="About.html">About</a></li>
+          <li><a href="recipes.html">Recipe List</a></li>
+          <li><a href="Search.html">Search for a recipe</a></li>
+          <li><a href="favorites.html">Favorites</a></li>
+          <li><a href="admin-dashboard.html">Admin</a></li>
+        </ul>
   
-          <ul class="right-nav">
-              <li><a href="login.html" target="_blank">Login</a></li>
-              <li>
-                  <a href="signup.html" target="_blank" class="signup">Sign Up</a>
-              </li>
-          </ul>
+        <ul class="right-nav">
+          <li><a href="login.html" target="_blank">Login</a></li>
+          <li>
+            <a href="signup.html" target="_blank" class="signup">Sign Up</a>
+          </li>
+        </ul>
       </nav>
-  </header>
+    </header>
 
   <div class="searchForm">
     <h1>Your Favorites</h1>
@@ -41,8 +43,9 @@
             <img src="../images/fresh-salad.jpeg" alt="Recipe Image" />
           </div>
           <div class="card_content">
-            <h2 class="card_title">Fresh Salad</h2>
-            <a href="recipe-fresh-salad.html" class="recipe-fav-button">View Recipe</a>
+            <h2 class="card_title" data-name="Fresh salad">Fresh Salad</h2>
+            <a href="recipe-fresh-salad.html" class="recipe-button"
+              >View Recipe</a>
           </div>
         </div>
       </li>

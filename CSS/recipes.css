@@ -37,7 +37,7 @@ header {
 
 nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 
@@ -45,8 +45,8 @@ nav {
 .center-nav {
   display: flex;
   list-style: none;
-  margin-left: 500px;
 }
+
 
 .center-nav li {
   margin: 0 15px;
@@ -104,8 +104,30 @@ nav {
   
 }
 
+.logo div{
+  display: flex;
+  align-items: center;
+}
+
 .logo img{
-  width: 45px;
+  width: 55px;
+}
+
+.logo a{
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.logo p{
+  display: inline-block;
+  font-family: "Imperial Script", cursive;
+  font-weight: 1000;
+  font-style: normal;
+  font-size: 40px;
+  color: darkred;
+  margin-bottom: 5px;
+  margin-left: 10px;
 }
 
 /* The css of the body  */
