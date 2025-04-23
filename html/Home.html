@@ -9,21 +9,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Recipes Home</title>
     <link rel="stylesheet" href="../CSS/styles.css" />
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-
   </head>
 
-  <!--Navigation bar-->
-  <div id="nav-placeholder">
-
-  </div>
-
-  <script>
-      $(function () {
-          $("#nav-placeholder").load("header.html");
-      });
-  </script>
-  <!--end of Navigation bar-->
+  <body>
+    <!--Navigation bar-->
+    <div id="nav-placeholder"></div>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        $(function () {
+            $("#nav-placeholder").load("header.html");
+        });
+    </script>
+    <!--end of Navigation bar-->
 
     <section class="main">
       <h1>Best Recipes for You !</h1>
@@ -64,7 +61,7 @@
       <button class="prev">⟨</button>
       <button class="next">⟩</button>
     </div>
-
+    
     <script src="../JS/home.js"></script>
   </body>
 </html>
