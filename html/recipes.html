@@ -10,15 +10,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Imperial+Script&display=swap" rel="stylesheet">
     <link rel="icon" href="../images/platful_iconn.png" type="image/png">
     <link rel="stylesheet" href="../CSS/styles.css" />
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 </head>
 
 <body>
-    <!--Navigation bar-->
-    <div id="nav-placeholder">
-
-    </div>
-
+    <div id="nav-placeholder"></div>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script>
         $(function () {
             $("#nav-placeholder").load("header.html");
@@ -26,106 +22,11 @@
     </script>
     <!--end of Navigation bar-->
 
+    <div class="recipe-container" id="dynamic-recipe-list"></div>
+    <script src="../JS/recipes.js"></script>
+    <!-- USE THIS THIS SCRIPT TO INITIALIZE SAMPLE RECIPES FOR recipes.html -->
+    <!-- <script src="../JS/init-sample-recipes.js"></script> -->
 
-    <div class="recipe-container">
-
-        <article class="recipe-card">
-            <div class="image-wrapper">
-                <img src="/images/Lasagna.jpg" alt="Lasagna">
-                <span class="badge">45 mins</span>
-            </div>
-            <div class="card-content">
-                <h3 class="recipe-title">Lasagna</h3>
-                <p class="recipe-category">Main Course</p>
-                <a href="/html/recipe-lasagna.html" class="view-button">View Recipe</a>
-            </div>
-        </article>
-
-        <article class="recipe-card">
-            <div class="image-wrapper">
-                <img src="/images/ChocolateCake.jpg" alt="ChocolateCake">
-                <span class="badge">65 mins</span>
-            </div>
-            <div class="card-content">
-                <h3 class="recipe-title">Chcoclate Cake</h3>
-                <p class="recipe-category">Dessert</p>
-                <a href="/html/recipe-chocolate-cake.html" class="view-button">View Recipe</a>
-            </div>
-        </article>
-
-        <article class="recipe-card">
-            <div class="image-wrapper">
-                <img src="/images/carbonara.jpg" alt="carbonara">
-                <span class="badge">45 mins</span>
-            </div>
-            <div class="card-content">
-                <h3 class="recipe-title">Carbonara</h3>
-                <p class="recipe-category">Main Course</p>
-                <a href="/html/recipe-carbonara.html" class="view-button">View Recipe</a>
-            </div>
-        </article>
-
-        <article class="recipe-card">
-            <div class="image-wrapper">
-                <img src="/images/ChickenCreamSoup.jpeg" alt="ChickenCreamSoup">
-                <span class="badge">25 mins</span>
-            </div>
-            <div class="card-content">
-                <h3 class="recipe-title">Chicken Cream Soup</h3>
-                <p class="recipe-category">Appetizer</p>
-                <a href="/html/recipe-chicken-soup.html" class="view-button">View Recipe</a>
-            </div>
-        </article>
-
-        <article class="recipe-card">
-            <div class="image-wrapper">
-                <img src="/images/Cheesecake.jpg" alt="Cheesecake">
-                <span class="badge">45 mins</span>
-            </div>
-            <div class="card-content">
-                <h3 class="recipe-title">Cheesecake</h3>
-                <p class="recipe-category">Dessert</p>
-                <a href="/html/recipe-cheesecake.html" class="view-button">View Recipe</a>
-            </div>
-        </article>
-
-        <article class="recipe-card">
-            <div class="image-wrapper">
-                <img src="/images/bechamel.jpg" alt="bechamel">
-                <span class="badge">60 min</span>
-            </div>
-            <div class="card-content">
-                <h3 class="recipe-title">Bechamel</h3>
-                <p class="recipe-category">Main Course</p>
-                <a href="/html/recipe-bechamel.html" class="view-button">View Recipe</a>
-            </div>
-        </article>
-
-        <article class="recipe-card">
-            <div class="image-wrapper">
-                <img src="/images/tomato.jpeg" alt="tomato-soup">
-                <span class="badge">15 mins</span>
-            </div>
-            <div class="card-content">
-                <h3 class="recipe-title">Tomato Soup</h3>
-                <p class="recipe-category">Appetizer</p>
-                <a href="/html/recipe-tomato-soup.html" class="view-button">View Recipe</a>
-            </div>
-        </article>
-
-        <article class="recipe-card">
-            <div class="image-wrapper">
-                <img src="/images/fresh-salad.jpeg" alt="fresh-salad">
-                <span class="badge">10 mins</span>
-            </div>
-            <div class="card-content">
-                <h3 class="recipe-title">Fresh Salad</h3>
-                <p class="recipe-category">Appetizer</p>
-                <a href="/html/recipe-fresh-salad.html" class="view-button">View Recipe</a>
-            </div>
-        </article>
-
-    </div>
     <button></button>
 
     </section>

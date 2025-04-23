@@ -28,7 +28,8 @@ header {
   width: 100%;
   top: 0;
   background: rgba(255, 255, 255, 1);
-  padding: 8px 30px; /* reduced padding for less height */
+  height: 4rem;
+  padding: 0 30px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   z-index: 1000;
   display: flex;
@@ -51,7 +52,8 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 40px; /* optional: set a minimum height */
+  min-height: 40px;
+  /* optional: set a minimum height */
 }
 
 /* Center navigation */
@@ -164,16 +166,17 @@ nav {
 }
 
 .searchForm {
+  margin-top: 110px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-bottom: 50px;
-  position: absolute;
+  position: static;
   filter: none;
-  top: 300px;
-  left: 50%;
-  transform: translateX(-50%);
+  left: unset;
+  top: unset;
+  transform: none;
   z-index: 1;
   width: auto;
 }
@@ -209,21 +212,6 @@ nav {
   opacity: 0.7;
 }
 
-.searchForm button {
-  padding: 8px;
-  width: 40%;
-  border: 2px solid black;
-  border-radius: 30px;
-  background-color: white;
-  transition: transform 0.1s ease, background-color 0.1s ease;
-}
-
-.searchForm button:hover {
-  transform: scale(1.1) translateY(-5px);
-  background-color: black;
-  color: white;
-}
-
 .FromDirection {
   display: flex;
   flex-direction: column;
@@ -254,18 +242,13 @@ nav {
   flex-direction: column;
   overflow: hidden;
   padding-left: 30px;
-  background: repeating-linear-gradient(
-        #0000 0 calc(1.2rem - 1px),
-        #66afe1 0 1.2rem
-      )
-      right bottom / 100% 100%,
+  background: repeating-linear-gradient(#0000 0 calc(1.2rem - 1px),
+      #66afe1 0 1.2rem) right bottom / 100% 100%,
     linear-gradient(red 0 0) 30px 0 / 2px 100% #fff;
   background-repeat: no-repeat;
   line-height: 1.2rem;
-  mask: radial-gradient(circle 0.8rem at 2px 50%, #0000 98%, #000) 0 0 / 100%
-    2.4rem;
-  -webkit-mask: radial-gradient(circle 0.8rem at 2px 50%, #0000 98%, #000) 0 0 /
-    100% 2.4rem;
+  mask: radial-gradient(circle 0.8rem at 2px 50%, #0000 98%, #000) 0 0 / 100% 2.4rem;
+  -webkit-mask: radial-gradient(circle 0.8rem at 2px 50%, #0000 98%, #000) 0 0 / 100% 2.4rem;
   max-width: 300px;
 }
 
@@ -313,80 +296,27 @@ nav {
   font-size: 1.3em;
 }
 
-.searchForm,
 .favoritesList {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-bottom: 50px;
-  position: absolute;
-  filter: none;
-  bottom: 100px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1;
   width: auto;
 }
 
-.searchForm input {
-  border: none;
-  border-bottom: 2px solid white;
-  background: transparent;
-  color: white;
-  width: 275px;
-  font-size: 18px;
-  padding: 5px 10px;
-  outline: none;
-  transition: border-bottom 0.1s ease;
-  margin-bottom: 20px;
-  flex-direction: column;
-}
-
-.searchForm input:hover {
-  border-bottom: 3px solid white;
-}
-
-.searchForm h1 {
-  font-size: 40px;
-  font-family: sans-serif;
-  color: #ececec;
-  margin-bottom: 15px;
-}
-
-.searchForm input::placeholder {
-  color: #cccccc;
-  opacity: 0.7;
-}
-
-.searchForm button {
-  padding: 8px;
-  width: 40%;
-  border: 2px solid black;
-  border-radius: 30px;
-  background-color: white;
-  transition: transform 0.1s ease, background-color 0.1s ease;
-}
-
-.searchForm button:hover {
-  transform: scale(1.1) translateY(-5px);
-  background-color: black;
-  color: white;
-}
-
-.FromDirection {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
 /* Generalize styles for cards */
+.recipe-container,
+.cards {
+  margin-top: 110px !important;
+  /* Ensure space for header, override other margins */
+}
+
 .cards {
   display: grid;
   grid-template-columns: 400px 400px 400px;
   list-style: none;
-  margin: 50px auto 0;
+  margin: 0 auto 0 auto;
   padding: 0;
   max-width: 1200px;
 }
@@ -409,18 +339,13 @@ nav {
   flex-direction: column;
   overflow: hidden;
   padding-left: 30px;
-  background: repeating-linear-gradient(
-        #0000 0 calc(1.2rem - 1px),
-        #66afe1 0 1.2rem
-      )
-      right bottom / 100% 100%,
+  background: repeating-linear-gradient(#0000 0 calc(1.2rem - 1px),
+      #66afe1 0 1.2rem) right bottom / 100% 100%,
     linear-gradient(red 0 0) 30px 0 / 2px 100% #fff;
   background-repeat: no-repeat;
   line-height: 1.2rem;
-  mask: radial-gradient(circle 0.8rem at 2px 50%, #0000 98%, #000) 0 0 / 100%
-    2.4rem;
-  -webkit-mask: radial-gradient(circle 0.8rem at 2px 50%, #0000 98%, #000) 0 0 /
-    100% 2.4rem;
+  mask: radial-gradient(circle 0.8rem at 2px 50%, #0000 98%, #000) 0 0 / 100% 2.4rem;
+  -webkit-mask: radial-gradient(circle 0.8rem at 2px 50%, #0000 98%, #000) 0 0 / 100% 2.4rem;
   max-width: 300px;
   padding-bottom: 20px;
 }
@@ -473,6 +398,10 @@ h2.card_title {
   justify-content: center;
   align-items: center;
   margin: auto;
+}
+
+.content, .search-page .content {
+  padding-top: 80px;
 }
 
 .about {
@@ -546,10 +475,13 @@ h2.card_title {
 }
 
 @keyframes flash {
-  0%, 100% {
+
+  0%,
+  100% {
     background-color: white;
     color: red;
   }
+
   50% {
     background-color: red;
     color: white;
@@ -558,8 +490,8 @@ h2.card_title {
 
 .flash {
   animation: flash 0.3s ease-in-out 3;
-  padding: 2px 5px; 
-  border-radius: 4px; 
+  padding: 2px 5px;
+  border-radius: 4px;
 }
 
 slider {
@@ -584,7 +516,7 @@ slider {
 }
 
 .slides::-webkit-scrollbar {
-  display: none; 
+  display: none;
 }
 
 .slide {
@@ -654,28 +586,37 @@ slider {
   top: 50%;
   transform: translateY(-50%);
   border: 2px solid darkred;
-  border-radius: 20px;
-  padding: 5px 10px;
+  border-radius: 50%;
+  padding: 18px 24px;
   color: white;
   background-color: darkred;
   font-weight: 700;
-  font-size: 15px;
+  font-size: 2.2rem;
   font-family: sans-serif;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, background 0.3s;
   z-index: 20;
   cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider button:hover {
+  background-color: #a40000;
+  transform: translateY(-50%) scale(1.15);
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
 }
 
 button:hover {
   transform: translateY(-50%) scale(1.2);
-}
-
-.prev {
-  left: -60px; /* Try values like -20px to -40px depending on desired look */
-}
-
-.next {
-  right: -40px;
 }
 
 /* --- Recipe-specific styles from recipes.css --- */
@@ -689,83 +630,121 @@ button:hover {
 }
 
 .recipe-container {
-  padding-top: 120px;
-  margin-top: 2000px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  max-width: 1000px;
-  margin: auto;
+  margin-top: 110px !important;
+  /* Ensure space for header, override other margins */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center;
+  margin: 40px auto;
+  max-width: 1200px;
 }
 
 .recipe-card {
-  background: white;
-  border-radius: 30px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
   overflow: hidden;
+  width: 320px;
   display: flex;
   flex-direction: column;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s;
+  margin-bottom: 16px;
 }
 
 .recipe-card:hover {
-  transform: translateY(-13px);
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
 }
 
 .image-wrapper {
   position: relative;
+  width: 100%;
+  height: 210px;
+  overflow: hidden;
+  background: #f7f7f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .image-wrapper img {
   width: 100%;
-  height: 200px;
+  height: 100%;
   object-fit: cover;
+  display: block;
 }
 
 .badge {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  background: #48c8a6;
-  color: white;
-  font-weight: bold;
-  border-radius: 20px;
-  padding: 5px 10px;
-  font-size: 0.9rem;
+  bottom: 12px;
+  right: 12px;
+  background: #e74c3c;
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .card-content {
-  padding: 1rem;
+  padding: 20px 18px 18px 18px;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 8px;
 }
 
 .recipe-title {
-  color: #000000;
-  font-size: 1.2rem;
-  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: #222;
 }
 
 .recipe-category {
-  font-size: 0.9rem;
-  color: #666;
-  margin: 0;
+  font-size: 1rem;
+  color: #888;
+  margin-bottom: 10px;
 }
 
-.view-button {
-  align-self: flex-start;
-  margin-top: 0.5rem;
-  padding: 0.5rem 1rem;
-  background-color: #023074;
-  color: white;
+.view-button,
+.view-recipe-btn {
+  display: inline-block;
+  text-align: center;
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 18px;
+  font-size: 1rem;
+  font-weight: 600;
   text-decoration: none;
-  border-radius: 6px;
-  font-size: 0.9rem;
-  transition: background 0.3s ease;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background 0.2s;
 }
 
-.view-button:hover {
-  background-color: #b9ad0f;
+.view-button:hover,
+.view-recipe-btn:hover {
+  background: #c0392b;
+}
+
+/* Favorite Button */
+.favorite-btn {
+  background: none;
+  border: none;
+  color: #e74c3c;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: transform 0.1s, color 0.2s;
+  margin-top: 10px;
+  outline: none;
+}
+
+.favorite-btn:hover {
+  color: #c0392b;
+  transform: scale(1.2);
 }
 
 /* Back to Top Button */
@@ -781,7 +760,7 @@ button:hover {
   cursor: pointer;
   display: none;
   z-index: 1000;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
@@ -789,4 +768,3 @@ button:hover {
   background-color: #0056b3;
   transform: translateY(-3px);
 }
-

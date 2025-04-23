@@ -9,21 +9,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Recipes Home</title>
     <link rel="stylesheet" href="../CSS/styles.css" />
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-
   </head>
 
-  <!--Navigation bar-->
-  <div id="nav-placeholder">
-
-  </div>
-
-  <script>
-      $(function () {
-          $("#nav-placeholder").load("header.html");
-      });
-  </script>
-  <!--end of Navigation bar-->
+  <body>
+    <!--Navigation bar-->
+    <div id="nav-placeholder"></div>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        $(function () {
+            $("#nav-placeholder").load("header.html");
+        });
+    </script>
+    <!--end of Navigation bar-->
 
     <section class="main">
       <h1>Best Recipes for You !</h1>
@@ -33,38 +30,39 @@
     </section>
 
     <div class="slider">
-      <div class="slides">
-
-        <div class="slide active" id="1">
-          <div class="image-wrapper">
-            <img src="../images/bechamel.jpg" alt="bechamel">
-          </div>
-          <h3>Bechamel</h3>
-          <a href="recipe-bechamel.html" class="view-btn">View Recipe</a>
-        </div>
-
-        <div class="slide" id="2">
-          <div class="image-wrapper">
-            <img src="../images/Cheesecake.jpg" alt="Cheesecake">
-        </div>
-          <h3>Cheesecake</h3>
-          <a href="recipe-cheesecake.html" class="view-btn">View Recipe</a>
-        </div>
-
-        <div class="slide" id="3">
-          <div class="image-wrapper">
-            <img src="../images/ChickenCreamSoup.jpeg" alt="ChickenCreamSoup">
-          </div>
-          <h3>Chicken Cream Soup</h3>
-          <a href="recipe-chicken-soup.html" class="view-btn">View Recipe</a>
-        </div>
-        
+      <div class="slides" id="dynamic-slides">
+        <!-- Recipes will be dynamically rendered here -->
       </div>
-
       <button class="prev">⟨</button>
       <button class="next">⟩</button>
     </div>
-
     <script src="../JS/home.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        const slidesContainer = document.getElementById("dynamic-slides");
+        const recipes = JSON.parse(localStorage.getItem("recipes")) || [];
+
+        if (recipes.length === 0) {
+          slidesContainer.innerHTML = '<p>No recipes available.</p>';
+          return;
+        }
+
+        // Make the middle slide active by default
+        const middleIndex = Math.floor(Math.min(3, recipes.length) / 2);
+        recipes.slice(0, 3).forEach((recipe, index) => {
+          const slide = document.createElement("div");
+          slide.className = `slide ${index === middleIndex ? "active" : ""}`;
+          slide.id = index + 1;
+          slide.innerHTML = `
+            <div class="image-wrapper">
+              <img src="${recipe.image || '../images/placeholder.jpg'}" alt="${recipe.name}">
+            </div>
+            <h3>${recipe.name}</h3>
+            <a href="recipe-details.html?id=${recipe.id}" class="view-btn">View Recipe</a>
+          `;
+          slidesContainer.appendChild(slide);
+        });
+      });
+    </script>
   </body>
 </html>

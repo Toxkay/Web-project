@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
     <link rel="stylesheet" href="../CSS/dashboard.css">
+    
 </head>
 
 <body>
@@ -46,11 +47,21 @@
                 <label for="description">Description:</label>
                 <textarea id="description" placeholder="Enter recipe description" required></textarea>
 
+                <label for="duration">Duration in minutes:</label>
+                <input type="text" id="duration" placeholder="e.g. 45" required>
+
+                <label for="image">Recipe Image:</label>
+                <input type="file" id="image" accept="image/*">
+
                 <button type="submit">Add Recipe</button>
             </form>
         </section>
-
+        <section id="recipe-list-section">
+            <h2>Recipe List</h2>
+            <div id="recipe-list"></div>
+        </section>
     </main>
+    <script src="../JS/admin-dashboard.js"></script>
 </body>
 
 </html>
