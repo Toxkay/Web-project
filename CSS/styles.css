@@ -296,7 +296,6 @@ nav {
   font-size: 1.3em;
 }
 
-.searchForm,
 .favoritesList {
   display: flex;
   flex-direction: column;
@@ -304,59 +303,6 @@ nav {
   align-items: center;
   margin-bottom: 50px;
   width: auto;
-}
-
-.searchForm input {
-  border: none;
-  border-bottom: 2px solid white;
-  background: transparent;
-  color: white;
-  width: 275px;
-  font-size: 18px;
-  padding: 5px 10px;
-  outline: none;
-  transition: border-bottom 0.1s ease;
-  margin-bottom: 20px;
-  flex-direction: column;
-}
-
-.searchForm input:hover {
-  border-bottom: 3px solid white;
-}
-
-.searchForm h1 {
-  font-size: 40px;
-  font-family: sans-serif;
-  color: #ececec;
-  margin-bottom: 15px;
-}
-
-.searchForm input::placeholder {
-  color: #cccccc;
-  opacity: 0.7;
-}
-
-/* 
-.searchButton:hover {
-  transform: scale(1.1) translateY(-5px);
-  background-color: black;
-  color: white;
-}
-
-.searchButton {
-  padding: 8px;
-  width: 40%;
-  border: 2px solid black;
-  border-radius: 30px;
-  background-color: white;
-  transition: transform 0.1s ease, background-color 0.1s ease;
-} */
-
-.FromDirection {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 /* Generalize styles for cards */

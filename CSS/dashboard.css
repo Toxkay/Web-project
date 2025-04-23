@@ -24,7 +24,6 @@ header {
     color: white;
     padding: 1px;
     text-align: center;
-    backdrop-filter: blur(5px);
 }
 
 nav {
@@ -134,4 +133,8 @@ ul#recipe-list li {
     border-radius: 5px;
     backdrop-filter: blur(8px);
     color: white;
+}
+
+option {
+    color: rgb(95, 17, 17);
 }
