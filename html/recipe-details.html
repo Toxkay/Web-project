@@ -1,21 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Imperial+Script&display=swap" rel="stylesheet">
+    <link rel="icon" href="../images/platful_iconn.png" type="image/png">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Recipe Details</title>
-    <link rel="stylesheet" href="../CSS/styles.css" />
-    <link rel="icon" href="../images/platful_iconn.png" type="image/png">
-</head>
-<body>
-    <div id="nav-placeholder"></div>
+    <link rel="stylesheet" href="../CSS/det.css" />
+    <!-- <link rel="stylesheet" href="../CSS/styles.css"> -->
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+
+<body>
+    <!--Navigation bar-->
+    <div id="nav-placeholder"></div>
     <script>
         $(function () {
             $("#nav-placeholder").load("header.html");
         });
     </script>
-    <div class="recipe-details-container" id="recipe-details-container"></div>
+    <!--end of Navigation bar-->
+    <div class="recipe-details-container" id="recipe-details-container">
+        <!-- Dynamic content will be rendered here by recipe-details.js -->
+    </div>
     <script src="../JS/recipe-details.js"></script>
 </body>
+
 </html>

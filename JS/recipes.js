@@ -11,7 +11,14 @@ document.addEventListener("DOMContentLoaded", function() {
             recipeListDiv.innerHTML = '<p>No recipes found.</p>';
             return;
         }
+        let users = JSON.parse(localStorage.getItem('users')) || [];
+        let favorites = [];
+        if (currentUser) {
+            const user = users.find(u => u.email === currentUser.email);
+            favorites = user && user.favorites ? user.favorites : [];
+        }
         recipes.forEach(recipe => {
+            const isFavorited = favorites.includes(recipe.id);
             const card = document.createElement('article');
             card.className = 'recipe-card';
             card.innerHTML = `
@@ -20,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     ${recipe.duration ? `<span class="badge">${recipe.duration}</span>` : ''}
                 </div>
                 <div class="card-content">
+                    <button class="favorite-btn" data-id="${recipe.id}" title="Add to Favorites">${isFavorited ? '&#10084;' : '&#9825;'}</button>
                     <h3 class="recipe-title">${recipe.name}</h3>
                     <p class="recipe-category">${recipe.course}</p>
                     <a href="recipe-details.html?id=${recipe.id}" class="view-button">View Recipe</a>
@@ -44,10 +52,12 @@ document.addEventListener("DOMContentLoaded", function() {
                 users[userIndex].favorites.push(recipeId);
                 localStorage.setItem('users', JSON.stringify(users));
                 localStorage.setItem('currentUser', JSON.stringify(users[userIndex]));
-                alert('Added to favorites!');
             } else {
-                alert('Already in favorites!');
+                users[userIndex].favorites = users[userIndex].favorites.filter(id => id !== recipeId);
+                localStorage.setItem('users', JSON.stringify(users));
+                localStorage.setItem('currentUser', JSON.stringify(users[userIndex]));
             }
+            renderRecipes();
         }
         if (e.target.classList.contains('view-recipe-btn')) {
             const recipeId = e.target.getAttribute('data-id');

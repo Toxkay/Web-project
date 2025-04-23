@@ -56,9 +56,21 @@ document.addEventListener("DOMContentLoaded", function() {
             const ingredientsStr = document.getElementById("ingredients").value.trim();
             const description = document.getElementById("description").value.trim();
             const imageInput = document.getElementById("image");
+            const duration = document.getElementById('duration').value.trim();
+
+            if (!/^[0-9]+$/.test(duration)) {
+                alert('Duration must be a number in minutes.');
+                return;
+            }
 
             if (!name || !ingredientsStr || !description) {
                 alert("Please fill in all fields.");
+                return;
+            }
+
+            // Validate that ingredients are separated by commas
+            if (!ingredientsStr.includes(",")) {
+                alert("Please separate ingredients with commas.");
                 return;
             }
 
@@ -72,7 +84,8 @@ document.addEventListener("DOMContentLoaded", function() {
                     ingredients: parseIngredients(ingredientsStr),
                     description,
                     image: imageData || '',
-                    createdAt: new Date().toISOString()
+                    createdAt: new Date().toISOString(),
+                    duration: duration + " mins"
                 };
                 recipes.push(newRecipe);
                 localStorage.setItem("recipes", JSON.stringify(recipes));
