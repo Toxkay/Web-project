@@ -1,40 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <link rel="icon" href="../images/platful_iconn.png" type="image/png">
-
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chocolate Cake</title>
-    <link rel="stylesheet" href="../CSS/styles.css" />
-  </head>
-  <body>
+    <title>Fresh Salad</title>
+    <link rel="stylesheet" href="../CSS/det.css" />
+</head>
+<body>
     <header>
-      <nav>
-        <ul class="center-nav">
-          <li><a href="Home.html">Home</a></li>
-          <li><a href="About.html">About</a></li>
-          <li><a href="recipes.html">Recipe List</a></li>
-          <li><a href="Search.html">Search for a recipe</a></li>
-          <li><a href="favorites.html">Favorites</a></li>
-          <li><a href="admin-dashboard.html">Admin</a></li>
-        </ul>
-        <ul class="right-nav">
-          <li><a href="login.html" target="_blank">Login</a></li>
-          <li>
-            <a href="signup.html" target="_blank" class="signup">Sign Up</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
+        <div class="logo">
+            <a href="./Home.html"> <img src="../images/platful_iconn.png" /></a>
+        </div>
+        <nav>
+            <ul class="center-nav">
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="recipes.html">Recipe List</a></li>
+                <li><a href="Search.html">Search for a recipe</a></li>
+                <li><a href="favorites.html">Favorites</a></li>
+                <li><a href="admin-dashboard.html">Admin</a></li>
+            </ul>
+    
+            <ul class="right-nav">
+                <li><a href="login.html" target="_blank">Login</a></li>
+                <li>
+                    <a href="signup.html" target="_blank" class="signup">Sign Up</a>
+                </li>
+            </ul>
+        </nav>
+    </header>   
     <section class="recipe-page">
-      <div class="recipe_image">
-        <img src="../images/fresh-salad.jpeg" alt="Recipe Image" />
-      </div>
-      <h1>Fresh Salad</h1>
-      <p><strong>Course:</strong> appetizer</p>
-      <p><strong>Ingredients:</strong> cucumber ,tomato,lettuce,carrots</p>
-      <p><strong>Description:</strong>light salad rich in vitamins</p>
-    </section>
-  </body>
+      <a href="../html/recipes.html">← Back to Recipe List</a>
+  
+      <section class="recipe-title">
+          <h1>Fresh Salad</h1>
+          <p><strong>Course:</strong>Appetizer</p>
+          <p><strong>Description:</strong>This green salad recipe is simple, but it's still packed with delicious textures and flavors. It's a perfect side dish - you can serve it with almost anything!</p>
+      </section>
+  <section class="recipe-details">
+    <h2>Ingredients</h2>
+    <ul>
+      <li>2 cups mixed greens (lettuce, spinach, arugula, etc.)</li>
+      <li>1 cucumber, sliced</li>
+      <li>1 cup cherry tomatoes, halved</li>
+      <li>1/2 red onion, thinly sliced</li>
+      <li>1/2 cup shredded carrots</li>
+      <li>1 avocado, diced (optional)</li>
+      <li>1/4 cup crumbled feta cheese or shredded mozzarella (optional)</li>
+      <li>2 tablespoons olive oil</li>
+      <li>1 tablespoon lemon juice or balsamic vinegar</li>
+      <li>Salt and pepper to taste</li>
+    </ul>
+
+    <h2>Materials Needed</h2>
+    <ul>
+      <li>Cutting board and knife</li>
+      <li>Large mixing bowl</li>
+      <li>Salad tongs or two large spoons</li>
+      <li>Measuring spoons</li>
+      <li>Small bowl or jar (for dressing)</li>
+    </ul>
+
+    <h2>Instructions</h2>
+    <ol>
+      <li>Wash and dry all vegetables thoroughly.</li>
+      <li>Chop or slice all the vegetables as listed and place them in a large mixing bowl.</li>
+      <li>In a small bowl or jar, whisk together olive oil, lemon juice or vinegar, salt, and pepper to make the dressing.</li>
+      <li>Pour the dressing over the salad and toss gently to combine everything well.</li>
+      <li>Add avocado and cheese (if using) just before serving to avoid sogginess.</li>
+      <li>Serve fresh as a light appetizer or side dish.</li>
+    </ol>
+  </section>
+</section>
+<script src="../JS/details.js"></script>
+
+</body>
 </html>
