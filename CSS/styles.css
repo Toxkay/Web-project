@@ -28,15 +28,30 @@ header {
   width: 100%;
   top: 0;
   background: rgba(255, 255, 255, 1);
-  padding: 15px 50px;
+  padding: 8px 30px; /* reduced padding for less height */
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
 }
 
 nav {
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 40px; /* optional: set a minimum height */
 }
 
 /* Center navigation */
@@ -78,7 +93,6 @@ nav {
   transition: color 0.3s ease-in-out;
 }
 
-
 .right-nav .signup {
   background: darkred;
   color: white;
@@ -88,35 +102,28 @@ nav {
 }
 
 .right-nav li .signup {
-  background:darkred;
+  background: darkred;
   color: white;
   padding: 8px 15px;
   border-radius: 5px;
   font-weight: 600;
   transition: color 0.3s ease-out;
-
 }
+
 .right-nav .signup:hover {
-  background:red;
-  
+  background: red;
 }
 
-.logo div{
+.logo div {
   display: flex;
   align-items: center;
 }
 
-.logo img{
+.logo img {
   width: 55px;
 }
 
-.logo a{
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-}
-
-.logo p{
+.logo p {
   display: inline-block;
   font-family: "Imperial Script", cursive;
   font-weight: 1000;
@@ -126,7 +133,6 @@ nav {
   margin-bottom: 5px;
   margin-left: 10px;
 }
-
 
 /* Main */
 .main,
@@ -186,20 +192,23 @@ nav {
   margin-bottom: 20px;
   flex-direction: column;
 }
+
 .searchForm input:hover {
   border-bottom: 3px solid white;
 }
-.searchForm h1 {
 
+.searchForm h1 {
   font-size: 40px;
   font-family: sans-serif;
   color: #ececec;
   margin-bottom: 15px;
 }
+
 .searchForm input::placeholder {
   color: #cccccc;
   opacity: 0.7;
 }
+
 .searchForm button {
   padding: 8px;
   width: 40%;
@@ -208,17 +217,20 @@ nav {
   background-color: white;
   transition: transform 0.1s ease, background-color 0.1s ease;
 }
+
 .searchForm button:hover {
   transform: scale(1.1) translateY(-5px);
   background-color: black;
   color: white;
 }
+
 .FromDirection {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+
 .search-page .cards {
   display: grid;
   grid-template-columns: 400px 400px 400px;
@@ -316,6 +328,7 @@ nav {
   z-index: 1;
   width: auto;
 }
+
 .searchForm input {
   border: none;
   border-bottom: 2px solid white;
@@ -329,19 +342,23 @@ nav {
   margin-bottom: 20px;
   flex-direction: column;
 }
+
 .searchForm input:hover {
   border-bottom: 3px solid white;
 }
+
 .searchForm h1 {
   font-size: 40px;
   font-family: sans-serif;
   color: #ececec;
   margin-bottom: 15px;
 }
+
 .searchForm input::placeholder {
   color: #cccccc;
   opacity: 0.7;
 }
+
 .searchForm button {
   padding: 8px;
   width: 40%;
@@ -350,11 +367,13 @@ nav {
   background-color: white;
   transition: transform 0.1s ease, background-color 0.1s ease;
 }
+
 .searchForm button:hover {
   transform: scale(1.1) translateY(-5px);
   background-color: black;
   color: white;
 }
+
 .FromDirection {
   display: flex;
   flex-direction: column;
@@ -378,6 +397,7 @@ nav {
   justify-content: center;
   filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.25));
 }
+
 .hidden {
   display: none !important;
 }
@@ -456,39 +476,35 @@ h2.card_title {
 }
 
 .about {
-  position: relative;
-  min-height: 100vh;
-  padding: 25px 40px;
-  color: white;
-  z-index: 1;
-  text-align: center;
+  max-width: 900px;
+  margin: 200px auto;
+  background: rgba(255, 255, 255, 1);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
 .about h1 {
-  font-size: 52px;
-  margin-bottom: 40px;
-  font-weight: bold;
+  font-size: 48px;
+  color: darkred;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 .about p {
-  font-size: 22px;
-  line-height: 1.8;
-  margin: 0 auto 25px;
-  max-width: 800px;
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: rgb(0, 0, 0);
 }
 
 .about ul {
-  font-size: 20px;
-  line-height: 1.8;
-  margin: 0 auto 30px;
-  padding-left: 200px;
-  list-style: disc;
-  max-width: 800px;
-  text-align: left;
+  margin: 10px 0 20px 20px;
 }
 
 .about ul li {
-  margin-bottom: 15px;
+  font-size: 18px;
+  margin-bottom: 8px;
+  list-style-type: disc;
 }
 
 .recipe-button {
@@ -529,8 +545,6 @@ h2.card_title {
   object-fit: cover;
 }
 
-
-
 @keyframes flash {
   0%, 100% {
     background-color: white;
@@ -547,7 +561,8 @@ h2.card_title {
   padding: 2px 5px; 
   border-radius: 4px; 
 }
-.slider {
+
+slider {
   position: relative;
   width: 100%;
   max-width: 1000px;
@@ -609,7 +624,6 @@ h2.card_title {
   height: 200px;
   object-fit: cover;
   border-radius: 20px;
-
 }
 
 .slide h3 {
@@ -663,3 +677,116 @@ button:hover {
 .next {
   right: -40px;
 }
+
+/* --- Recipe-specific styles from recipes.css --- */
+
+.rep {
+  margin-top: 100px;
+  padding: 200px 200;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.recipe-container {
+  padding-top: 120px;
+  margin-top: 2000px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.recipe-card {
+  background: white;
+  border-radius: 30px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease;
+}
+
+.recipe-card:hover {
+  transform: translateY(-13px);
+}
+
+.image-wrapper {
+  position: relative;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #48c8a6;
+  color: white;
+  font-weight: bold;
+  border-radius: 20px;
+  padding: 5px 10px;
+  font-size: 0.9rem;
+}
+
+.card-content {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.recipe-title {
+  color: #000000;
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.recipe-category {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0;
+}
+
+.view-button {
+  align-self: flex-start;
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #023074;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  transition: background 0.3s ease;
+}
+
+.view-button:hover {
+  background-color: #b9ad0f;
+}
+
+/* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.7em 1em;
+  border-radius: 50px;
+  cursor: pointer;
+  display: none;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.back-to-top:hover {
+  background-color: #0056b3;
+  transform: translateY(-3px);
+}
+

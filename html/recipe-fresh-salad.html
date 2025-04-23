@@ -9,30 +9,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fresh Salad</title>
     <link rel="stylesheet" href="../CSS/det.css" />
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <a href="./Home.html"><img src="../images/platful_iconn.png"/><p>Plateful</p></a>
-    </div>
-    <nav>
-      <ul class="center-nav">
-        <li><a href="Home.html">Home</a></li>
-        <li><a href="About.html">About</a></li>
-        <li><a href="recipes.html">Recipe List</a></li>
-        <li><a href="Search.html">Search for a recipe</a></li>
-        <li><a href="favorites.html">Favorites</a></li>
-        <li><a href="admin-dashboard.html">Admin</a></li>
-      </ul>
+  <!--Navigation bar-->
+  <div id="nav-placeholder">
 
-      <ul class="right-nav">
-        <li><a href="login.html" target="_blank">Login</a></li>
-        <li>
-          <a href="signup.html" target="_blank" class="signup">Sign Up</a>
-        </li>
-      </ul>
-    </nav>
-  </header>
+  </div>
+
+  <script>
+      $(function () {
+          $("#nav-placeholder").load("header.html");
+      });
+  </script>
+  <!--end of Navigation bar-->
     <section class="recipe-page">
       <a href="../html/recipes.html">← Back to Recipe List</a>
   

@@ -9,31 +9,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Recipes Home</title>
     <link rel="stylesheet" href="../CSS/styles.css" />
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
   </head>
 
-  <body class="fav">
-  <header>
-    <div class="logo">
-      <a href="./Home.html"><img src="../images/platful_iconn.png"/><p>Plateful</p></a>
-    </div>
-    <nav>
-      <ul class="center-nav">
-        <li><a href="Home.html">Home</a></li>
-        <li><a href="About.html">About</a></li>
-        <li><a href="recipes.html">Recipe List</a></li>
-        <li><a href="Search.html">Search for a recipe</a></li>
-        <li><a href="favorites.html">Favorites</a></li>
-        <li><a href="admin-dashboard.html">Admin</a></li>
-      </ul>
+  <!--Navigation bar-->
+  <div id="nav-placeholder">
 
-      <ul class="right-nav">
-        <li><a href="login.html" target="_blank">Login</a></li>
-        <li>
-          <a href="signup.html" target="_blank" class="signup">Sign Up</a>
-        </li>
-      </ul>
-    </nav>
-  </header>
+  </div>
+
+  <script>
+      $(function () {
+          $("#nav-placeholder").load("header.html");
+      });
+  </script>
+  <!--end of Navigation bar-->
 
     <section class="main">
       <h1>Best Recipes for You !</h1>
@@ -47,26 +37,26 @@
 
         <div class="slide active" id="1">
           <div class="image-wrapper">
-            <img src="/images/bechamel.jpg" alt="bechamel">
+            <img src="../images/bechamel.jpg" alt="bechamel">
           </div>
           <h3>Bechamel</h3>
-          <a href="../html/recipe-bechamel.html" class="view-btn">View Recipe</a>
+          <a href="recipe-bechamel.html" class="view-btn">View Recipe</a>
         </div>
 
         <div class="slide" id="2">
           <div class="image-wrapper">
-            <img src="/images/Cheesecake.jpg" alt="Cheesecake">
+            <img src="../images/Cheesecake.jpg" alt="Cheesecake">
         </div>
           <h3>Cheesecake</h3>
-          <a href="../html/recipe-cheesecake.html" class="view-btn">View Recipe</a>
+          <a href="recipe-cheesecake.html" class="view-btn">View Recipe</a>
         </div>
 
         <div class="slide" id="3">
           <div class="image-wrapper">
-            <img src="/images/ChickenCreamSoup.jpeg" alt="ChickenCreamSoup">
+            <img src="../images/ChickenCreamSoup.jpeg" alt="ChickenCreamSoup">
           </div>
           <h3>Chicken Cream Soup</h3>
-          <a href="../html/recipe-chicken-soup.html" class="view-btn">View Recipe</a>
+          <a href="recipe-chicken-soup.html" class="view-btn">View Recipe</a>
         </div>
         
       </div>
