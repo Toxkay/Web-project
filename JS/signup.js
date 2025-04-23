@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
             const name = document.getElementById('name').value.trim();
             const email = document.getElementById('email').value.trim();
             const password = document.getElementById('password').value.trim();
-            
+            const role = document.getElementById('role').value;
             
             // Validate name
             if (!name) {
@@ -57,22 +57,24 @@ document.addEventListener("DOMContentLoaded", function() {
             
             
             // Check if email already exists
+            
             const users = JSON.parse(localStorage.getItem('users')) || [];
+            const isFirstUser = users.length === 0;
             const emailExists = users.some(user => user.email === email);
             
             if (emailExists) {
                 showError('An account with this email already exists');
                 return;
             }
-            
-            // Create new user
+
             const newUser = {
                 name,
                 email,
                 password,
+                role,
                 createdAt: new Date().toISOString()
             };
-            
+
             // Save user
             users.push(newUser);
             localStorage.setItem('users', JSON.stringify(users));

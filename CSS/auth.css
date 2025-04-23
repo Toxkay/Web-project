@@ -205,3 +205,40 @@ header {
     text-align: center;
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
+
+/* Custom Select Dropdown */
+.auth select {
+    width: 100%;
+    padding: 14px 14px 14px 14px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease-in-out;
+    color: #333;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    margin-top: 5px;
+}
+
+.auth select:focus {
+    outline: none;
+    border-color: darkred;
+    box-shadow: 0 0 0 2px rgba(139, 0, 0, 0.2);
+}
+
+.custom-select-wrapper {
+    position: relative;
+}
+
+.custom-select-wrapper::after {
+    content: '\25BC';
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #888;
+    font-size: 16px;
+}
