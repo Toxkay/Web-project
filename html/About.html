@@ -20,10 +20,38 @@
   </div>
 
   <script>
-      $(function () {
-          $("#nav-placeholder").load("header.html");
-      });
-  </script>
+    $(function () {
+        $("#nav-placeholder").load("header.html", function() {
+            // This code runs after header.html is loaded
+            var currentUser = JSON.parse(localStorage.getItem("currentUser"));
+            var rightNav = document.getElementById("right-nav-auth");
+            var userInfo = document.getElementById("user-info");
+            var helloUser = document.getElementById("hello-user");
+            var logoutBtn = document.getElementById("logout-btn");
+            var adminLink = document.querySelector('a[href="admin-dashboard.html"]');
+            if (currentUser && currentUser.name) {
+                rightNav.style.display = "none";
+                userInfo.style.display = "flex";
+                helloUser.textContent = `Hello, ${currentUser.name}`;
+                logoutBtn.onclick = function() {
+                    localStorage.removeItem("currentUser");
+                    window.location.reload();
+                };
+                if (adminLink) {
+                    if (currentUser.role === "admin") {
+                        adminLink.parentElement.style.display = "list-item";
+                    } else {
+                        adminLink.parentElement.style.display = "none";
+                    }
+                }
+            } else {
+                rightNav.style.display = "flex";
+                userInfo.style.display = "none";
+                if (adminLink) adminLink.parentElement.style.display = "none";
+            }
+        });
+    });
+</script>
   <!--end of Navigation bar-->
 
 <section class="about">
