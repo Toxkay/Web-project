@@ -760,3 +760,65 @@ slider {
   background-color: #0056b3;
   transform: translateY(-3px);
 }
+
+/* footer */
+
+.footer {
+  background-color: #ffffff;
+  color: #fff;
+  padding: 40px 0 20px 0;
+  margin-top: 20px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+
+
+.footer-section h3 {
+  
+  color: darkred;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.footer-section p,
+.footer-section ul,
+.footer-section li,
+.footer-section a {
+  
+  color: #000000;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section li {
+  margin-bottom: 10px;
+}
+
+.footer-section a:hover {
+  color:red;
+}
+
+
+
+.footer-bottom {
+  text-align: center;
+  font-size: 13px;
+  color: #000000;
+  font-weight: 700;
+  border-top: 1px solid #333;
+  margin-top: 30px;
+  padding-top: 10px;
+}
