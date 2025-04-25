@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Imperial+Script&display=swap" rel="stylesheet">
@@ -11,15 +12,15 @@
     <link rel="stylesheet" href="../CSS/styles.css" />
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
-  </head>
-  <!--Navigation bar-->
-  <div id="nav-placeholder">
+</head>
+<!--Navigation bar-->
+<div id="nav-placeholder">
 
-  </div>
+</div>
 
-  <script>
+<script>
     $(function () {
-        $("#nav-placeholder").load("header.html", function() {
+        $("#nav-placeholder").load("header.html", function () {
             // This code runs after header.html is loaded
             var currentUser = JSON.parse(localStorage.getItem("currentUser"));
             var rightNav = document.getElementById("right-nav-auth");
@@ -31,7 +32,7 @@
                 rightNav.style.display = "none";
                 userInfo.style.display = "flex";
                 helloUser.textContent = `Hello, ${currentUser.name}`;
-                logoutBtn.onclick = function() {
+                logoutBtn.onclick = function () {
                     localStorage.removeItem("currentUser");
                     window.location.reload();
                 };
@@ -50,13 +51,48 @@
         });
     });
 </script>
-  <!--end of Navigation bar-->
+<!--end of Navigation bar-->
 
-  <div class="searchForm">
+<div class="searchForm">
     <h1>Your Favorites</h1>
     <div id="favorites-list" class="cards"></div>
-  </div>
-  <script src="../JS/favorites.js"></script>
+</div>
+<script src="../JS/favorites.js"></script>
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3 style=" font-family: Imperial Script, cursive; font-size: 35px;">Plateful</h3>
+            <p style="font-weight: 400;">Your go-to for delicious recipes, cooking tips, and meal inspiration..</p>
+        </div>
 
-  </body>
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="recipes.html">Recipes</a></li>
+                <li><a href="About.html">About Us</a></li>
+                <li><a href="favorites.html">Favorites</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>Contact Us</h3>
+            <p>📍 123 Deserts Street, Shawrma City<br>
+                📞 +1 234 567 890<br>
+                ✉️ support@Plateful.com</p>
+        </div>
+
+        <div class="footer-section">
+
+
+            <h3>Follow Us</h3>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        &copy; 2025 Plateful. All Rights Reserved.
+    </div>
+</footer>
+</body>
+
 </html>
