@@ -116,7 +116,25 @@
         { id: "ing4", name: "Celery", quantity: "2 stalks" },
         { id: "ing5", name: "Heavy cream", quantity: "1 cup" },
       ],
-      description: "Smooth and creamy chicken soup, perfect for a starter.",
+      materials: [
+        "Large pot",
+        "Cutting board",
+        "Sharp knife",
+        "Wooden spoon",
+        "Blender or immersion blender",
+        "Measuring cups and spoons"
+      ],
+      instructions: [
+        "Dice the chicken breast into small, bite-sized pieces.",
+        "Chop onions, carrots, and celery finely.",
+        "In a large pot, sauté onions until translucent.",
+        "Add chicken pieces and cook until no longer pink.",
+        "Add carrots and celery, cook for 5 minutes.",
+        "Pour in chicken broth and simmer for 15 minutes.",
+        "Stir in heavy cream and season with salt and pepper.",
+        "Simmer for additional 5 minutes and serve hot."
+      ],
+      description: "Smooth and creamy chicken soup, perfect for a starter."
     },
     {
       id: "rec_cheesecake",
