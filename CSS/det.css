@@ -149,14 +149,13 @@ width: 55px;
 /* Main css page */
 /* Recipe Section */
 .recipe-page {
-    margin-top: 140px;
+    margin-top: 1rem;
     padding: 2rem 1rem;
 }
 
 .recipe-title {
     color: var(--text-light);
     border-radius: 10px;
-    padding: 2rem;
     margin: auto;
     max-width: 900px;
     text-align: center;
@@ -211,23 +210,6 @@ width: 55px;
     justify-content: space-between;
     max-width: 900px;
     margin: 2rem auto;
-}
-
-.recipe-nav-button,
-.recipe-page a {
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.recipe-nav-button:hover {
-    background-color: #2980b9;
 }
 
 .back-to-top {
@@ -493,19 +475,23 @@ width: 55px;
 .back-link {
     display: flex;
     align-items: center;
+    background-color: var(--primary-color);
     color: var(--text-light);
+    border: none;
+    border-radius: 8px;
+    padding: 0.75rem 2rem;
     text-decoration: none;
+    font-size: 1rem;
     font-weight: 500;
-    margin-bottom: 2rem;
     transition: transform 0.3s ease;
+    cursor: pointer;
     position: relative;
 }
 
 .back-link::before {
     content: "←";
     position: absolute;
-    left: 0;
-    margin-right: 0.0rem;
+    left: 10px;
     transition: transform 0.3s ease;
 }
 
@@ -820,7 +806,7 @@ kbd {
   padding: 1rem;
   background: rgba(0, 0, 0, 0.2);
   border-radius: 20px;
-  margin: 2rem auto;
+  margin: 0.5rem auto;
   max-width: max-content;
 }
 
@@ -1254,6 +1240,18 @@ kbd {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   opacity: 0;
   transform: translateY(20px);
+}
+
+.recommendation-card a {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .recommendation-card.visible {

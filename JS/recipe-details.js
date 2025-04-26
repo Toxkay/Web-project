@@ -206,7 +206,7 @@ function renderRecipe(recipe) {
   let recipeHTML = `
     <section class="recipe-page" role="main" aria-label="Recipe details for ${recipe.name}">
       <nav class="recipe-navigation" aria-label="Recipe navigation">
-        <a href="recipes.html" class="back-link" aria-label="Back to recipes list">Back to Recipes</a>
+        <a href="recipes.html" class="back-link" aria-label="Back to recipes list">Back to<br>Recipes</a>
         <div class="keyboard-shortcuts" role="note" aria-label="Keyboard shortcuts">
           <span>Press Esc to return to recipes list</span>
           <span>Use ← → arrows to navigate between recipes</span>
