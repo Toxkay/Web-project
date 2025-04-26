@@ -8,17 +8,21 @@ let totalSlides = 3;
 
 function showSlide() {
   for (let i = 1; i <= totalSlides; i++) {
-    document.getElementById(i).classList.remove("active");
+    const slide = document.getElementById(i);
+    if (slide) {
+      slide.classList.remove("active");
+    }
   }
 
   let activeSlide = document.getElementById(currentIndex);
-  activeSlide.classList.add("active");
-
-  activeSlide.scrollIntoView({
-    behavior: "smooth",
-    inline: "center",
-    block: "nearest",
-  });
+  if (activeSlide) {
+    activeSlide.classList.add("active");
+    activeSlide.scrollIntoView({
+      behavior: "smooth",
+      inline: "center",
+      block: "nearest",
+    });
+  }
 }
 
 function nextSlide() {
