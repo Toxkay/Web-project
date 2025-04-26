@@ -869,7 +869,7 @@ slider {
   position: fixed;
   bottom: 2rem;
   right: 1rem;
-  background-color: #007bff;
+  background-color: var(--primary-color);
   color: white;
   border: none;
   padding: 0.7em 1em;
@@ -882,7 +882,7 @@ slider {
 }
 
 .back-to-top:hover {
-  background-color: #0056b3;
+  background-color: var(--primary-light);
   transform: translateY(-3px);
 }
 

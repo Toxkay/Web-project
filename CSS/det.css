@@ -215,7 +215,7 @@ width: 55px;
 
 .recipe-nav-button,
 .recipe-page a {
-    background-color: #3498db;
+    background-color: var(--primary-color);
     color: white;
     border: none;
     padding: 0.75rem 1.5rem;
@@ -234,7 +234,7 @@ width: 55px;
     position: fixed;
     bottom: 2rem;
     right: 1rem;
-    background-color: #007bff;
+    background-color: var(--primary-color);
     color: white;
     border: none;
     padding: 0.7em 1em;
@@ -247,7 +247,7 @@ width: 55px;
 }
 
 .back-to-top:hover {
-    background-color: #0056b3;
+    background-color: var(--primary-light);
     transform: translateY(-3px);
 }
 
@@ -1280,13 +1280,13 @@ kbd {
 }
 
 .recommendation-content h3 {
-  color: var(--primary-color);
+  color: var(--text-light);
   font-size: 1.25rem;
   margin-bottom: 0.5rem;
 }
 
 .recommendation-category {
-  color: var(--text-dark);
+  color: var(--accent-color);
   font-size: 0.9rem;
   opacity: 0.8;
   margin-bottom: 1rem;
@@ -1305,7 +1305,7 @@ kbd {
 }
 
 .recommendation-meta .similarity {
-  color: var(--primary-color);
+  color: var(--text-light);
   font-weight: 500;
 }
 
