@@ -5,7 +5,7 @@
       id: "rec_lasagna",
       name: "Lasagna",
       course: "Main Course",
-      image: "/images/Lasagna.jpg",
+      image: "../images/Lasagna.jpg",
       duration: "45 mins",
       ingredients: [
         { id: "ing1", name: "Lasagna noodles", quantity: "12" },
@@ -40,7 +40,7 @@
       id: "rec_chocolate_cake",
       name: "Chocolate Cake",
       course: "Dessert",
-      image: "/images/ChocolateCake.jpg",
+      image: "../images/ChocolateCake.jpg",
       duration: "65 mins",
       ingredients: [
         { id: "ing1", name: "Flour", quantity: "1 3/4 cups" },
@@ -75,7 +75,7 @@
       id: "rec_carbonara",
       name: "Carbonara",
       course: "Main Course",
-      image: "/images/carbonara.jpg",
+      image: "../images/carbonara.jpg",
       duration: "45 mins",
       ingredients: [
         { id: "ing1", name: "Spaghetti", quantity: "200g" },
@@ -107,7 +107,7 @@
       id: "rec_chicken_soup",
       name: "Chicken Cream Soup",
       course: "Appetizer",
-      image: "/images/ChickenCreamSoup.jpeg",
+      image: "../images/ChickenCreamSoup.jpeg",
       duration: "25 mins",
       ingredients: [
         { id: "ing1", name: "Chicken breast", quantity: "1 pound" },
@@ -140,7 +140,7 @@
       id: "rec_cheesecake",
       name: "Cheesecake",
       course: "Dessert",
-      image: "/images/Cheesecake.jpg",
+      image: "../images/Cheesecake.jpg",
       duration: "45 mins",
       ingredients: [
         { id: "ing1", name: "Cream cheese", quantity: "16 oz" },
@@ -171,7 +171,7 @@
       id: "rec_bechamel",
       name: "Bechamel",
       course: "Main Course",
-      image: "/images/bechamel.jpg",
+      image: "../images/bechamel.jpg",
       duration: "60 min",
       ingredients: [
         { id: "ing1", name: "Butter", quantity: "2 tbsp" },
@@ -199,7 +199,7 @@
       id: "rec_tomato_soup",
       name: "Tomato Soup",
       course: "Appetizer",
-      image: "/images/tomato.jpeg",
+      image: "../images/tomato.jpeg",
       duration: "15 mins",
       ingredients: [
         { id: "ing1", name: "Tomatoes", quantity: "800g" },
@@ -230,7 +230,7 @@
       id: "rec_fresh_salad",
       name: "Fresh Salad",
       course: "Appetizer",
-      image: "/images/fresh-salad.jpeg",
+      image: "../images/fresh-salad.jpeg",
       duration: "10 mins",
       ingredients: [
         { id: "ing1", name: "Mixed greens", quantity: "2 cups" },
