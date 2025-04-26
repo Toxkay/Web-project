@@ -1,8 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+/* Color palette */
+:root {
+  --primary-color: #8B0000;      /* Deep red */
+  --primary-light: #C41E3A;      /* Lighter red */
+  --primary-dark: #570000;       /* Darker red */
+  --accent-color: #FFB74D;       /* Warm orange */
+  --text-dark: #2C3E50;          /* Dark blue-gray */
+  --text-light: #ECF0F1;         /* Light gray */
+  --background-light: #FFFFFF;    /* White */
+  --background-dark: #F5F5F5;    /* Light gray */
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
+}
+
+h1, h2, h3, .recipe-title, .card_title {
+  font-family: 'Playfair Display', serif;
 }
 
 body {
@@ -68,14 +87,14 @@ nav {
 
 .center-nav li a {
   text-decoration: none;
-  color: darkred;
+  color: var(--primary-color);
   font-size: 18px;
   font-weight: 600;
   transition: color 0.3s ease-in-out;
 }
 
 .center-nav li a:hover {
-  color: red;
+  color: var(--primary-light);
 }
 
 /* Right navigation */
@@ -96,8 +115,8 @@ nav {
 }
 
 .right-nav li .signup {
-  background: darkred;
-  color: white;
+  background: var(--primary-color);
+  color: var(--text-light);
   padding: 8px 15px;
   border-radius: 5px;
   font-weight: 600;
@@ -105,7 +124,7 @@ nav {
 }
 
 .right-nav .signup:hover {
-  background: red;
+  background: var(--primary-light);
 }
 
 .logo div {
@@ -123,9 +142,8 @@ nav {
   font-weight: 1000;
   font-style: normal;
   font-size: 40px;
-  color: darkred;
-  margin-bottom: 5px;
-  margin-left: 10px;
+  color: var(--primary-color);
+  margin: 1.3rem 0px 0.8rem 10px;
 }
 
 /* Main */
@@ -174,7 +192,7 @@ nav {
 }
 
 .searchForm input {
-  top: 300px;
+  top: px;
   border: none;
   border-bottom: 2px solid white;
   background: transparent;
@@ -186,10 +204,20 @@ nav {
   transition: border-bottom 0.1s ease;
   margin-bottom: 20px;
   flex-direction: column;
+  position: relative;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
 }
 
 .searchForm input:hover {
   border-bottom: 3px solid white;
+}
+
+.searchForm input:focus {
+  background: rgba(255, 255, 255, 0.2);
+  border-bottom: 2px solid var(--accent-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .searchForm h1 {
@@ -228,7 +256,7 @@ nav {
 }
 
 .search-page .card {
-  background-color: white;
+  background-color: var(--background-light);
   border-radius: 0.25rem;
   display: flex;
   flex-direction: column;
@@ -242,6 +270,7 @@ nav {
   mask: radial-gradient(circle 0.8rem at 2px 50%, #0000 98%, #000) 0 0 / 100% 2.4rem;
   -webkit-mask: radial-gradient(circle 0.8rem at 2px 50%, #0000 98%, #000) 0 0 / 100% 2.4rem;
   max-width: 300px;
+  box-shadow: 0 4px 6px var(--shadow-color);
 }
 
 .search-page .card_image {
@@ -280,7 +309,7 @@ nav {
 }
 
 .search-page h2.card_title,
-.search-page p {
+.card p {
   margin: 1.2rem 0;
 }
 
@@ -325,7 +354,7 @@ nav {
 }
 
 .card {
-  background-color: white;
+  background-color: var(--background-light);
   border-radius: 0.25rem;
   display: flex;
   flex-direction: column;
@@ -340,6 +369,7 @@ nav {
   -webkit-mask: radial-gradient(circle 0.8rem at 2px 50%, #0000 98%, #000) 0 0 / 100% 2.4rem;
   max-width: 300px;
   padding-bottom: 20px;
+  box-shadow: 0 4px 6px var(--shadow-color);
 }
 
 .card_image {
@@ -379,8 +409,7 @@ nav {
   padding: 1.2rem;
 }
 
-h2.card_title,
-p {
+h2.card_title p {
   margin: 1.2rem 0;
 }
 
@@ -407,7 +436,7 @@ h2.card_title {
 
 .about h1 {
   font-size: 48px;
-  color: darkred;
+  color: var(--primary-color);
   margin-bottom: 20px;
   text-align: center;
 }
@@ -432,20 +461,21 @@ h2.card_title {
   margin: 0.5rem auto auto auto;
   justify-content: center;
   align-items: center;
-  border: 2px solid darkred;
+  border: 2px solid var(--primary-color);
   border-radius: 25px;
   padding: 10px 15px;
 
-  color: white;
+  color: var(--text-light);
   text-decoration: none;
   font-size: 17px;
   font-family: sans-serif;
-  background-color: darkred;
+  background-color: var(--primary-color);
   font-weight: 700;
   transition: transform 0.1s ease-in-out;
 }
 
 .recipe-button:hover {
+  background-color: var(--primary-light);
   transform: scale(1.2);
 }
 
@@ -498,8 +528,7 @@ slider {
 }
 
 .slides {
-  padding-top: 120px;
-  margin-top: 2000px;
+  padding-bottom: 100px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
@@ -560,8 +589,8 @@ slider {
 .view-btn {
   text-decoration: none;
   padding: 10px 20px;
-  background-color: darkred;
-  color: white;
+  background-color: var(--primary-color);
+  color: var(--text-light);
   border-radius: 12px;
   font-weight: bold;
   font-family: sans-serif;
@@ -570,18 +599,18 @@ slider {
 }
 
 .view-btn:hover {
-  background-color: #a40000;
+  background-color: var(--primary-light);
 }
 
 .slider button {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  border: 2px solid darkred;
+  border: 2px solid var(--primary-color);
   border-radius: 50%;
   padding: 18px 24px;
   color: white;
-  background-color: darkred;
+  background-color: var(--primary-color);
   font-weight: 700;
   font-size: 2.2rem;
   font-family: sans-serif;
@@ -595,7 +624,7 @@ slider {
 }
 
 .slider button:hover {
-  background-color: #a40000;
+  background-color: var(--primary-light);
   transform: translateY(-50%) scale(1.15);
 }
 
@@ -610,6 +639,60 @@ slider {
 /* button:hover {
   transform: translateY(-50%) scale(1.2);
 } */
+
+/* Slider navigation buttons */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background: rgba(139, 0, 0, 0.8);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.prev:hover, .next:hover {
+    background: rgba(139, 0, 0, 1);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.prev:active, .next:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+.prev {
+    left: 20px;
+}
+
+.next {
+    right: 20px;
+}
+
+@media (max-width: 768px) {
+    .prev, .next {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+    
+    .prev {
+        left: 10px;
+    }
+    
+    .next {
+        right: 10px;
+    }
+}
 
 /* --- Recipe-specific styles from recipes.css --- */
 
@@ -633,20 +716,30 @@ slider {
 }
 
 .recipe-card {
-  background: #fff;
+  background: var(--background-light);
   border-radius: 16px;
-  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 16px var(--shadow-color);
   overflow: hidden;
   width: 320px;
   display: flex;
   flex-direction: column;
   transition: transform 0.2s;
   margin-bottom: 16px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .recipe-card:hover {
   transform: translateY(-6px) scale(1.03);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+.recipe-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+  animation: fadeInUp 0.6s ease forwards;
+  animation-delay: var(--delay, 0s);
 }
 
 .image-wrapper {
@@ -671,8 +764,8 @@ slider {
   position: absolute;
   bottom: 12px;
   right: 12px;
-  background: #e74c3c;
-  color: #fff;
+  background: var(--primary-color);
+  color: var(--text-light);
   padding: 6px 14px;
   border-radius: 12px;
   font-size: 14px;
@@ -691,12 +784,14 @@ slider {
   font-size: 1.4rem;
   font-weight: 700;
   margin-bottom: 4px;
-  color: #222;
+  color: var(--text-dark);
+  letter-spacing: 0.5px;
 }
 
 .recipe-category {
   font-size: 1rem;
-  color: #888;
+  color: var(--primary-color);
+  font-weight: 500;
   margin-bottom: 10px;
 }
 
@@ -704,7 +799,7 @@ slider {
 .view-recipe-btn {
   display: inline-block;
   text-align: center;
-  background: #e74c3c;
+  background: var(--primary-color);
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -719,24 +814,55 @@ slider {
 
 .view-button:hover,
 .view-recipe-btn:hover {
-  background: #c0392b;
+  background: var(--primary-light);
 }
 
-/* Favorite Button */
+/* Favorite Button and Heart Animation */
 .favorite-btn {
-  background: none;
-  border: none;
-  color: #e74c3c;
-  font-size: 2rem;
-  cursor: pointer;
-  transition: transform 0.1s, color 0.2s;
-  margin-top: 10px;
-  outline: none;
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    font-size: 2rem;
+    cursor: pointer;
+    transition: transform 0.1s, color 0.2s;
+    margin-top: 10px;
+    outline: none;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
 }
 
-.favorite-btn:hover {
-  color: #c0392b;
-  transform: scale(1.2);
+.heart-animation {
+    position: fixed;
+    pointer-events: none;
+    z-index: 1000;
+    font-size: 24px;
+    transform: translate(-50%, -50%);
+}
+
+.heart-animation.animate {
+    animation: heartFloat 1s ease-out forwards;
+}
+
+@keyframes heartFloat {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+    }
+    15% {
+        transform: translate(-50%, -50%) scale(1.4);
+        opacity: 1;
+    }
+    30% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+        transform: translate(-50%, -250%) scale(1);
+        opacity: 0;
+    }
 }
 
 /* Back to Top Button */
@@ -764,10 +890,13 @@ slider {
 /* footer */
 
 .footer {
-  background-color: #ffffff;
-  color: #fff;
-  padding: 40px 0 20px 0;
+  background-color: var(--background-light);
+  padding: 40px 0 20px;
   margin-top: 20px;
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  z-index: 1;
 }
 
 .footer-container {
@@ -779,11 +908,13 @@ slider {
   gap: 30px;
 }
 
-
+.footer-section {
+  transform: translateY(0);
+  opacity: 1;
+}
 
 .footer-section h3 {
-  
-  color: darkred;
+  color: var(--primary-color);
   margin-bottom: 15px;
   font-size: 18px;
 }
@@ -792,8 +923,7 @@ slider {
 .footer-section ul,
 .footer-section li,
 .footer-section a {
-  
-  color: #000000;
+  color: var(--text-dark);
   font-size: 14px;
   text-decoration: none;
 }
@@ -808,17 +938,284 @@ slider {
 }
 
 .footer-section a:hover {
-  color:red;
+  color: var(--primary-light);
 }
-
-
 
 .footer-bottom {
   text-align: center;
   font-size: 13px;
-  color: #000000;
+  color: var(--text-dark);
   font-weight: 700;
-  border-top: 1px solid #333;
+  border-top: 1px solid var(--text-dark);
   margin-top: 30px;
   padding-top: 10px;
+}
+
+/* Heart animation */
+.heart-animation {
+    position: fixed;
+    pointer-events: none;
+    z-index: 1000;
+    font-size: 24px;
+    transform-origin: center;
+}
+
+.heart-animation.animate {
+    animation: heartFloat 1s ease-out forwards;
+}
+
+.heart-animation.heart-add {
+    color: var(--primary-color);
+}
+
+.heart-animation.heart-remove {
+    color: #666;
+}
+
+@keyframes heartFloat {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    15% {
+        transform: scale(1.4);
+        opacity: 1;
+    }
+    30% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1) translateY(-50px);
+        opacity: 0;
+    }
+}
+
+/* Card hover effect */
+.recipe-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+        circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+        rgba(255, 255, 255, 0.1) 0%,
+        transparent 50%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.recipe-card:hover::before {
+    opacity: 1;
+}
+
+/* Toast Notification */
+.toast-notification {
+    position: fixed;
+    bottom: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(44, 62, 80, 0.95);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    z-index: 1000;
+    transition: bottom 0.3s ease-in-out;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.toast-notification.show {
+    bottom: 24px;
+}
+
+/* Enhanced Heart Animations */
+.heart-animation {
+    position: fixed;
+    font-size: 24px;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.heart-animation.animate {
+    animation: heartFloat 1s ease-out forwards;
+}
+
+.heart-animation.heart-add {
+    color: var(--primary-color);
+}
+
+.heart-animation.heart-remove {
+    color: #666;
+}
+
+@keyframes heartFloat {
+    0% {
+        transform: scale(0) translate(-50%, 0);
+        opacity: 0;
+    }
+    15% {
+        transform: scale(1.4) translate(-50%, 0);
+        opacity: 1;
+    }
+    30% {
+        transform: scale(1) translate(-50%, 0);
+    }
+    100% {
+        transform: scale(1) translate(-50%, -100px);
+        opacity: 0;
+    }
+}
+
+/* Search animations and styles */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+.searching {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath fill='%23ffffff' d='M12 4V2A10 10 0 0 0 2 12h2a8 8 0 0 1 8-8z'%3E%3CanimateTransform attributeName='transform' type='rotate' from='0 12 12' to='360 12 12' dur='1s' repeatCount='indefinite'/%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 20px;
+}
+
+.no-results {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    margin-top: 2rem;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.no-results p {
+    color: var(--text-dark);
+    margin: 0.5rem 0;
+}
+
+.no-results .suggestion {
+    color: var(--primary-color);
+    font-size: 0.9rem;
+}
+
+.ingredient {
+    display: inline-block;
+    background: rgba(139, 0, 0, 0.1);
+    padding: 2px 8px;
+    border-radius: 12px;
+    margin: 2px;
+    transition: background-color 0.3s ease;
+}
+
+.ingredient:hover {
+    background: rgba(139, 0, 0, 0.2);
+}
+
+.view-recipe-btn.clicked {
+    transform: scale(0.95);
+    opacity: 0.8;
+}
+
+/* Favorites page specific styles */
+.searchForm .no-recipes {
+    text-align: center;
+    color: var(--text-light);
+    font-size: 1.2rem;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 12px;
+    backdrop-filter: blur(5px);
+    margin: 2rem auto;
+    max-width: 400px;
+}
+
+.searchForm #favorites-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 32px;
+    padding: 2rem;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.searchForm .recipe-description {
+  line-height: 1.4rem;
+}
+
+/* Skeleton Loading Animation */
+.skeleton {
+    animation: skeleton-loading 1s infinite alternate;
+    border-radius: 4px;
+}
+
+@keyframes skeleton-loading {
+    0% {
+        background-color: rgba(200, 200, 200, 0.1);
+    }
+    100% {
+        background-color: rgba(200, 200, 200, 0.3);
+    }
+}
+
+.recipe-card-skeleton {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 16px;
+    overflow: hidden;
+    width: 320px;
+    height: 400px;
+    margin-bottom: 16px;
+}
+
+.skeleton-image {
+    width: 100%;
+    height: 210px;
+}
+
+.skeleton-content {
+    padding: 20px;
+}
+
+.skeleton-title {
+    height: 24px;
+    width: 80%;
+    margin-bottom: 12px;
+}
+
+.skeleton-category {
+    height: 16px;
+    width: 40%;
+    margin-bottom: 16px;
+}
+
+.skeleton-description {
+    height: 16px;
+    width: 100%;
+    margin-bottom: 8px;
+}
+
+.skeleton-description:last-child {
+    width: 80%;
 }
