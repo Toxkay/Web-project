@@ -1,9 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+:root {
+    --primary-color: #8B0000;      /* Deep red */
+    --primary-light: #C41E3A;      /* Lighter red */
+    --primary-dark: #570000;       /* Darker red */
+    --accent-color: #FFB74D;       /* Warm orange */
+    --text-dark: #2C3E50;          /* Dark blue-gray */
+    --text-light: #ECF0F1;         /* Light gray */
+    --background-light: #FFFFFF;    /* White */
+    --background-dark: #F5F5F5;    /* Light gray */
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
 /* General Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
 }
 
 body {
@@ -68,14 +86,15 @@ header {
 .auth h2 {
     font-size: 35px;
     margin-bottom: 15px;
-    color: #f8f5f2;
+    color: var(--text-light);
 }
 
 .auth form {
     display: flex;
     flex-direction: column;
     width: 500px; /* Wider form */
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -103,16 +122,16 @@ header {
     width: 100%;
     padding: 14px 14px 14px 40px;
     font-size: 16px;
-    border: 1px solid #ddd;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 5px;
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.9);
     transition: all 0.3s ease-in-out;
 }
 
 .auth input:focus {
     outline: none;
-    border-color: darkred;
-    box-shadow: 0 0 0 2px rgba(139, 0, 0, 0.2);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(139, 0, 0, 0.1);
 }
 
 .toggle-password {
@@ -122,7 +141,7 @@ header {
     transform: translateY(-50%);
     background: none;
     border: none;
-    color: #666;
+    color: var(--text-dark);
     cursor: pointer;
 }
 
@@ -134,8 +153,8 @@ header {
     font-size: 18px;
     border: none;
     border-radius: 5px;
-    background: darkred;
-    color: white;
+    background: var(--primary-color);
+    color: var(--text-light);
     font-weight: bold;
     cursor: pointer;
     transition: background 0.3s ease-in-out;
@@ -144,7 +163,7 @@ header {
 }
 
 .auth-btn:hover {
-    background: red;
+    background: var(--primary-light);
 }
 
 /* Google Login Button */
@@ -182,8 +201,8 @@ header {
 
 .auth a {
     text-decoration: none;
-    color: white;
-    background: darkred;
+    background: var(--primary-color);
+    color: var(--text-light);
     padding: 8px 16px;
     border-radius: 5px;
     font-weight: bold;
@@ -191,19 +210,19 @@ header {
 }
 
 .auth a:hover {
-    background: red;
+    background: var(--primary-light);
 }
 
 /* Error Message */
 .error-message {
-    background-color: rgba(255, 0, 0, 0.3);
+    background-color: rgba(220, 53, 69, 0.2);
     color: white;
     padding: 12px;
     border-radius: 5px;
     font-size: 16px;
     margin-bottom: 20px;
     text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(220, 53, 69, 0.3);
 }
 
 /* Custom Select Dropdown */
@@ -211,9 +230,9 @@ header {
     width: 100%;
     padding: 14px 14px 14px 14px;
     font-size: 16px;
-    border: 1px solid #ddd;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 5px;
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.9);
     transition: all 0.3s ease-in-out;
     color: #333;
     appearance: none;
@@ -224,8 +243,8 @@ header {
 
 .auth select:focus {
     outline: none;
-    border-color: darkred;
-    box-shadow: 0 0 0 2px rgba(139, 0, 0, 0.2);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(139, 0, 0, 0.1);
 }
 
 .custom-select-wrapper {
@@ -239,6 +258,6 @@ header {
     right: 16px;
     transform: translateY(-50%);
     pointer-events: none;
-    color: #888;
+    color: var(--text-dark);
     font-size: 16px;
 }

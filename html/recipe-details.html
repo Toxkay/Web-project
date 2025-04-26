@@ -2,21 +2,33 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Detailed recipe instructions and ingredients">
+    <title>Recipe Details | Plateful</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Imperial+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="icon" href="../images/platful_iconn.png" type="image/png">
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Recipe Details</title>
     <link rel="stylesheet" href="../CSS/det.css" />
-    <!-- <link rel="stylesheet" href="../CSS/styles.css"> -->
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 </head>
 
 <body>
+    <!-- Skip to main content link for keyboard users -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <div class="scroll-progress" role="progressbar" aria-label="Reading progress"></div>
+    
+    <div class="page-loader" role="alert" aria-busy="true">
+        <div class="loading-spinner" aria-hidden="true"></div>
+        <span class="sr-only">Loading recipe...</span>
+    </div>
+
     <!--Navigation bar-->
     <div id="nav-placeholder"></div>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script>
         $(function () {
             $("#nav-placeholder").load("header.html", function() {
@@ -51,45 +63,22 @@
         });
     </script>
     <!--end of Navigation bar-->
-    <div class="recipe-details-container" id="recipe-details-container">
-        <!-- Dynamic content will be rendered here by recipe-details.js -->
-    </div>
-    <footer class="footer">
-        <div class="footer-container">
-          <div class="footer-section">
-            <h3 style=" font-family: Imperial Script, cursive; font-size: 35px;">Plateful</h3>
-            <p style="font-weight: 400;">Your go-to for delicious recipes, cooking tips, and meal inspiration..</p>
-          </div>
-      
-          <div class="footer-section">
-            <h3>Quick Links</h3>
-            <ul>
-              <li><a href="Home.html">Home</a></li>
-              <li><a href="recipes.html">Recipes</a></li>
-              <li><a href="About.html">About Us</a></li>
-              <li><a href="favorites.html">Favorites</a></li>
-            </ul>
-          </div>
-      
-          <div class="footer-section">
-            <h3>Contact Us</h3>
-            <p>📍 123 Deserts Street, Shawrma City<br>
-               📞 +1 234 567 890<br>
-               ✉️ support@Plateful.com</p>
-          </div>
-      
-          <div class="footer-section">
-            
-      
-            <h3>Follow Us</h3>
-          </div>
+    <main id="main-content" tabindex="-1">
+        <div class="recipe-details-container" id="recipe-details-container" role="main" aria-live="polite">
+            <!-- Dynamic content will be rendered here by recipe-details.js -->
         </div>
-      
-        <div class="footer-bottom">
-          &copy; 2025 Plateful. All Rights Reserved.
-        </div>
-      </footer>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+    <script>
+        $(function () {
+            $("#footer-placeholder").load("footer.html");
+        });
+    </script>
+
     <script src="../JS/recipe-details.js"></script>
+    <script src="../JS/details.js"></script>
 </body>
 
 </html>

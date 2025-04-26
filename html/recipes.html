@@ -50,50 +50,28 @@
     </script>
     <!--end of Navigation bar-->
 
-    <div class="recipe-container" id="dynamic-recipe-list"></div>
+    <div class="recipe-container" id="dynamic-recipe-list">
+        <!-- Loading skeletons will be replaced by actual content -->
+        <div class="recipe-card-skeleton">
+            <div class="skeleton skeleton-image"></div>
+            <div class="skeleton-content">
+                <div class="skeleton skeleton-title"></div>
+                <div class="skeleton skeleton-category"></div>
+                <div class="skeleton skeleton-description"></div>
+                <div class="skeleton skeleton-description"></div>
+            </div>
+        </div>
+        <!-- Repeat skeleton 5 more times -->
+    </div>
+    <!-- <script src="../JS/init-sample-recipes.js"></script> -->
     <script src="../JS/recipes.js"></script>
-    <!-- USE THIS THIS SCRIPT TO INITIALIZE SAMPLE RECIPES FOR recipes.html -->
-    <script src="../JS/init-sample-recipes.js"></script>
 
-    <button></button>
-
-    </section>
-    <footer class="footer">
-        <div class="footer-container">
-          <div class="footer-section">
-            <h3 style=" font-family: Imperial Script, cursive; font-size: 35px;">Plateful</h3>
-            <p style="font-weight: 400;">Your go-to for delicious recipes, cooking tips, and meal inspiration..</p>
-          </div>
-      
-          <div class="footer-section">
-            <h3>Quick Links</h3>
-            <ul>
-              <li><a href="Home.html">Home</a></li>
-              <li><a href="recipes.html">Recipes</a></li>
-              <li><a href="About.html">About Us</a></li>
-              <li><a href="favorites.html">Favorites</a></li>
-            </ul>
-          </div>
-      
-          <div class="footer-section">
-            <h3>Contact Us</h3>
-            <p>📍 123 Deserts Street, Shawrma City<br>
-               📞 +1 234 567 890<br>
-               ✉️ support@Plateful.com</p>
-          </div>
-      
-          <div class="footer-section">
-            
-      
-            <h3>Follow Us</h3>
-          </div>
-        </div>
-      
-        <div class="footer-bottom">
-          &copy; 2025 Plateful. All Rights Reserved.
-        </div>
-      </footer>
-    <script src="../JS/list.js"></script>
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+    <script>
+        $(function () {
+            $("#footer-placeholder").load("footer.html");
+        });
+    </script>
 </body>
-
 </html>
