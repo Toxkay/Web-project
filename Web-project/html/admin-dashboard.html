@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" href="../images/platful_iconn.png" type="image/png">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="../CSS/dashboard.css">
+    
+</head>
+
+<body>
+    <header>
+        <h2>Admin Dashboard</h2>
+
+
+    </header>
+    <nav>
+        <ul class="center-nav">
+            <li><a href="Home.html">Home</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="recipes.html">Recipe List</a></li>
+            <li><a href="Search.html">Search for a recipe</a></li>
+            <li><a href="favorites.html">Favorites</a></li>
+            <li><a href="admin-dashboard.html">Admin</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="add-recipe">
+            <h2>Add New Recipe</h2>
+            <form>
+                <label for="recipe-name">Recipe Name:</label>
+                <input type="text" id="recipe-name" placeholder="Enter recipe name" required>
+
+                <label for="course">Course Name:</label>
+                <select id="course">
+                    <option value="appetizers">Appetizers</option>
+                    <option value="main course">Main Course</option>
+                    <option value="dessert">Dessert</option>
+                </select>
+
+                <label for="ingredients">Ingredients:</label>
+                <textarea id="ingredients" placeholder="Enter ingredients separated by commas" required></textarea>
+
+                <label for="description">Description:</label>
+                <textarea id="description" placeholder="Enter recipe description" required></textarea>
+
+                <label for="duration">Duration in minutes:</label>
+                <input type="text" id="duration" placeholder="e.g. 45" required>
+
+                <label for="image">Recipe Image:</label>
+                <input type="file" id="image" accept="image/*">
+
+                <label>Materials (comma-separated)</label>
+                <input type="text" id="materials" placeholder="e.g., Oven, Baking dish">
+
+                <label>Instructions</label>
+                <textarea id="instructions" placeholder="Step-by-step instructions..."></textarea>
+
+                <label>Tips (optional)</label>
+                <textarea id="tips" placeholder="Helpful cooking tips..."></textarea>
+
+                <button type="submit">Add Recipe</button>
+            </form>
+        </section>
+        <section id="recipe-list-section">
+            <h2>Recipe List</h2>
+            <div id="recipe-list"></div>
+        </section>
+    </main>
+    
+    <script src="../JS/admin-dashboard.js"></script>
+</body>
+
+</html>
