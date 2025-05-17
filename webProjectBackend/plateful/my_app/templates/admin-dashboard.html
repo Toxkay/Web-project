@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -69,7 +70,22 @@
         </section>
         <section id="recipe-list-section">
             <h2>Recipe List</h2>
-            <div id="recipe-list"></div>
+            <div id="recipe-list">
+                {% for recipe in recipes %}
+                    <div class="recipe-card">
+                        <h3>{{ recipe.title }}</h3>
+                        <img src="{{ recipe.image.url }}" alt="{{ recipe.title }}" width="150">
+                        <p><strong>Course:</strong> {{ recipe.course }}</p>
+                        <p><strong>Ingredients:</strong> {{ recipe.ingredients }}</p>
+                        <p><strong>Description:</strong> {{ recipe.description }}</p>
+                        <p><strong>Materials:</strong> {{ recipe.materials }}</p>
+                        <p><strong>Instructions:</strong> {{ recipe.instructions }}</p>
+                        <p><strong>Tips:</strong> {{ recipe.tips }}</p>
+                    </div>
+                {% empty %}
+                    <p>No recipes found.</p>
+                {% endfor %}
+            </div>
         </section>
     </main>
     

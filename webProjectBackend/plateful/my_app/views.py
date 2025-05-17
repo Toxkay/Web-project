@@ -7,7 +7,8 @@ def home(request):
     return render(request, "home.html")
 
 def admin_dashboard(request):
-    return render(request , "admin-dashboard.html")
+    recipes = Recipe.objects.all()
+    return render(request, 'admin-dashboard.html', {'recipes': recipes})
 
 def add_recipe(request):
     if request.method == 'POST':
@@ -15,7 +16,7 @@ def add_recipe(request):
         course = request.POST.get('course')
         ingredients = request.POST.get('ingredients')
         description = request.POST.get('description')
-        duration = request.POST.get('duration')
+        duration = request.POST.get('duration')        
         materials = request.POST.get('materials')
         instructions = request.POST.get('instructions')
         tips = request.POST.get('tips')
