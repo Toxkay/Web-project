@@ -1,7 +1,10 @@
+from idlelib.rpc import request_queue
+
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from django.shortcuts import render
-from .models import Recipe  
+from .models import Recipe
+from django.db.models import Q
 
 def home(request):
     return render(request, "home.html")
@@ -42,3 +45,10 @@ def add_recipe(request):
         recipe.save()
 
     return HttpResponse("Recipe Added Successfuly!!")
+
+def search(request):
+    query = request.GET.get('query', '')
+    recipes = Recipe.objects.filter(
+        Q(title__icontains=query) | Q(ingredients__icontains=query)
+    ) if query else Recipe.objects.none()
+    return render(request, "search.html", {'recipes': recipes, 'query': query})

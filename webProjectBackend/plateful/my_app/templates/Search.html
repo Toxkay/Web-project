@@ -8,20 +8,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Search for a recipe</title>
-    <link rel="stylesheet" href="../CSS/styles.css" />
+    <link rel="stylesheet" href="../static/CSS/styles.css" />
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-
   </head>
   <body class="search-page">
     <!--Navigation bar-->
-    <div id="nav-placeholder">
-
-    </div>
-
+    <div id="nav-placeholder"></div>
     <script>
       $(function () {
           $("#nav-placeholder").load("header.html", function() {
-              // This code runs after header.html is loaded
               var currentUser = JSON.parse(localStorage.getItem("currentUser"));
               var rightNav = document.getElementById("right-nav-auth");
               var userInfo = document.getElementById("user-info");
@@ -50,21 +45,35 @@
               }
           });
       });
-  </script>
+    </script>
     <!--end of Navigation bar-->
 
     <div class="searchForm">
-      <h1 style="
-      padding-top: 0px;
-      margin-top: 5rem;">Search for a recipe</h1>
-      <form action="" id="searchForm" class="FromDirection" method="">
+      <h1 style="padding-top: 0px; margin-top: 5rem;">Search for a recipe</h1>
+      <form action="{% url 'search' %}" id="searchForm" class="FromDirection" method="get">
         <input
           type="text"
           name="query"
           id="inputSearch"
-          placeholder="Enter recipe name..."/>
+          placeholder="Enter recipe name..."
+          value="{{ query|default:'' }}" />
+        <button type="submit">Search</button>
       </form>
-      <ul class="cards" id="search-results"></ul>
+  <ul class="cards" id="search-results">
+  {% if recipes %}
+    {% for recipe in recipes %}
+      <li class="card">
+        <h2>{{ recipe.title }}</h2>
+        <p><strong>Course:</strong> {{ recipe.course }}</p>
+        <p><strong>Ingredients:</strong> {{ recipe.ingredients }}</p>
+        <p>{{ recipe.description }}</p>
+        <p><strong>Duration:</strong> {{ recipe.duration }} minutes</p>
+      </li>
+    {% endfor %}
+  {% else %}
+    <p style="color:black; font-size: larger">No recipes found.</p>
+  {% endif %}
+</ul>
     </div>
     <script src="../JS/search-dynamic.js"></script>
 
