@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %}Home | Plateful{% endblock %}
+{% block content %}
+{% load static %}
+
+<section class="main">
+  <h1>Best Recipes for You!</h1>
+  <p>With minimal ingredients make yourself a delicious and healthy recipe</p>
+</section>
+<div class="slider">
+  <div class="slides" id="dynamic-slides">
+    <!-- Recipes will be dynamically rendered here by JS -->
+  </div>
+  <button class="prev">⟨</button>
+  <button class="next">⟩</button>
+</div>
+<script>
+  // Pass Django static image path to JS
+  const defaultImage = "{% static 'images/bechamel.jpg' %}";
+</script>
+<script src="{% static 'JS/home.js' %}"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const slidesContainer = document.getElementById("dynamic-slides");
+    const recipes = JSON.parse('{{ recipes_json|escapejs }}');
+    if (!recipes.length) {
+      slidesContainer.innerHTML = '<p>No recipes available.</p>';
+      return;
+    }
+    const middleIndex = Math.floor(Math.min(3, recipes.length) / 2);
+    recipes.forEach((recipe, index) => {
+      const slide = document.createElement("div");
+      slide.className = `slide ${index === middleIndex ? "active" : ""}`;
+      slide.id = index + 1;
+      let imgSrc = recipe.image ? recipe.image : defaultImage;
+      slide.innerHTML = `
+        <div class="image-wrapper">
+          <img src="${imgSrc}" alt="${recipe.name}">
+        </div>
+        <h3>${recipe.name}</h3>
+        <a href="/recipe/${recipe.id}/" class="view-btn">View Recipe</a>
+      `;
+      slidesContainer.appendChild(slide);
+    });
+  });
+</script>
+{% endblock %}
+

@@ -1,1 +1,7 @@
 .vscode
+webProjectBackend
+db.sqlite3-shm
+db.sqlite3-wal
+db.sqlit3
+redundant_files
+.venv

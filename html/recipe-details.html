@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block title %}Recipe Details | Plateful{% endblock %}
+{% block content %}
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="scroll-progress" role="progressbar" aria-label="Reading progress"></div>
+<div class="page-loader" role="alert" aria-busy="true">
+    <div class="loading-spinner" aria-hidden="true"></div>
+    <span class="sr-only">Loading recipe...</span>
+</div>
+<main id="main-content" tabindex="-1">
+    <div class="recipe-details-container" id="recipe-details-container" role="main" aria-live="polite">
+        <!-- Dynamic content will be rendered here by recipe-details.js -->
+    </div>
+</main>
+<script type="application/json" id="django-recipe-id">{{ recipe_id|default:"" }}</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const container = document.getElementById("recipe-details-container");
+        let recipeId = document.getElementById('django-recipe-id').textContent.trim();
+        if (!recipeId) {
+            // fallback to ?id= param for legacy links
+            const params = new URLSearchParams(window.location.search);
+            recipeId = params.get("id");
+        }
+        if (!recipeId) {
+            container.innerHTML = '<div class="recipe-error"><h2>Recipe Not Found</h2><p>No recipe ID provided.</p></div>';
+            return;
+        }
+        container.innerHTML = `<div class="recipe-loading" role="alert" aria-busy="true"><div class="recipe-skeleton" aria-hidden="true"><div class="skeleton-title"></div><div class="skeleton-meta"></div><div class="skeleton-description"></div></div><div class="sr-only">Loading recipe details, please wait...</div></div>`;
+        fetch(`/api/recipe/${recipeId}/`)
+            .then(response => {
+                if (!response.ok) throw new Error('Recipe not found');
+                return response.json();
+            })
+            .then(recipe => {
+                renderRecipe(recipe);
+            })
+            .catch(() => {
+                container.innerHTML = `<div class="recipe-error"><h2>Recipe Not Found</h2><p>We couldn't find the recipe you're looking for.</p><a href="{% url 'recipes' %}" class="back-link">← Back to Recipes</a></div>`;
+            });
+
+        function renderRecipe(recipe) {
+            let html = `<section class="recipe-page"><h1>
+      ${recipe.name || recipe.title}
+    </h1>
+    <div class="recipe-meta">
+      <span>${recipe.course || ''}</span>
+      <span>${recipe.duration || ''}</span>
+    </div>
+    <p>${recipe.description || ''}</p>
+    <h2>Ingredients</h2>
+    <ul>${(recipe.ingredients || []).map(i => `<li>${i}</li>`).join('')}</ul>`;
+            if (recipe.materials && recipe.materials.length) {
+                html += `<h2>Materials</h2><ul>${recipe.materials.map(m => `<li>${m}</li>`).join('')}</ul>`;
+            }
+            if (recipe.instructions && recipe.instructions.length) {
+                html += `<h2>Instructions</h2><ol>${recipe.instructions.map(step => `<li>${step}</li>`).join('')}</ol>`;
+            }
+            if (recipe.tips && recipe.tips.length) {
+                html += `<h2>Tips</h2><ul>${recipe.tips.map(tip => `<li>${tip}</li>`).join('')}</ul>`;
+            }
+            html += `</section>`;
+            container.innerHTML = html;
+        }
+    });
+</script>
+{% endblock %}
