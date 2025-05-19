@@ -1,0 +1,114 @@
+[
+  {
+    "model": "my_app.recipe",
+    "fields": {
+      "title": "Béchamel Sauce",
+      "course": "main course",
+      "ingredients": "2 tablespoons butter, 2 tablespoons all-purpose flour, 2 cups milk (whole or 2%), Salt to taste, 1/4 teaspoon ground white pepper (optional), 1/4 teaspoon ground nutmeg (optional)",
+      "description": "Béchamel is a rich, pale-colored sauce made with milk.",
+      "duration": 15,
+      "materials": "Medium saucepan, Whisk, Measuring spoons, Measuring cups, Ladle",
+      "instructions": "1. In a medium saucepan, melt butter over medium heat. 2. Once the butter is melted, add flour and whisk continuously for 1-2 minutes to form a smooth paste (roux). 3. Slowly add the milk while continuing to whisk, making sure no lumps form. Keep whisking until the sauce thickens (about 5-7 minutes). 4. Once thickened, add salt, pepper, and nutmeg (if using), and whisk to combine. 5. Remove from heat and use immediately or keep warm until ready to serve.",
+      "tips": "Use freshly grated cheese for best flavor. Don't scramble the eggs—combine off the heat.",
+      "image": "static/images/bechamel.jpg"
+    }
+  },
+  {
+    "model": "my_app.recipe",
+    "fields": {
+      "title": "Spaghetti Carbonara",
+      "course": "main course",
+      "ingredients": "200g spaghetti, 100g pancetta or guanciale, 2 large eggs, 1/2 cup grated Pecorino Romano or Parmesan cheese, 1 clove garlic (optional), Freshly ground black pepper, Salt",
+      "description": "A classic Italian pasta dish.",
+      "duration": 30,
+      "materials": "Large pot, Skillet or frying pan, Mixing bowl, Tongs or pasta fork, Grater, Whisk or fork, Ladle or mug, Colander",
+      "instructions": "1. Bring a large pot of salted water to a boil. Cook the spaghetti until al dente. 2. In a bowl, whisk together the eggs and grated cheese until smooth. Add black pepper. 3. In a skillet, cook the pancetta or guanciale until crispy. Optionally, add garlic for aroma and remove it afterward. 4. Reserve 1 cup pasta water, drain pasta, add to skillet with pancetta. 5. Remove pan from heat, add egg and cheese mixture, toss vigorously, add pasta water gradually for creamy sauce. 6. Plate and top with extra cheese and black pepper.",
+      "tips": "Use freshly grated cheese for best flavor. Don't scramble the eggs—combine off the heat.",
+      "image": "static/images/carbonara.jpg"
+    }
+  },
+  {
+    "model": "my_app.recipe",
+    "fields": {
+      "title": "Classic Cheesecake",
+      "course": "dessert",
+      "ingredients": "1 ½ cups graham cracker crumbs, ¼ cup melted butter, 16 oz cream cheese, ¾ cup granulated sugar, 2 large eggs, 1 tsp vanilla extract",
+      "description": "A creamy and smooth dessert with a crunchy graham cracker crust.",
+      "duration": 60,
+      "materials": "Springform pan, Mixing bowls, Electric mixer or hand whisk, Measuring cups and spoons, Spatula, Oven",
+      "instructions": "1. Set oven to 325°F (160°C). 2. Mix graham cracker crumbs and melted butter, press into pan. 3. Beat cream cheese until smooth, add sugar, eggs, vanilla, blend until creamy. 4. Pour over crust, smooth top. 5. Bake 45–50 min, center almost set. 6. Let rest in oven 1 hour. 7. Refrigerate at least 4 hours before serving.",
+      "tips": "Use room temperature ingredients for a smooth batter. Don’t overmix. Place a pan of water in oven for moisture.",
+      "image": "static/images/Cheesecake.jpg"
+    }
+  },
+  {
+    "model": "my_app.recipe",
+    "fields": {
+      "title": "Chicken Cream Soup",
+      "course": "appetizer",
+      "ingredients": "2 tablespoons butter, 1 pound chicken breast diced, 1 medium onion chopped, 2 carrots diced, 2 celery stalks diced, 3 tablespoons all-purpose flour, 4 cups chicken broth, 1 cup heavy cream, Salt and pepper, Pinch of nutmeg (optional)",
+      "description": "A warm, creamy soup filled with tender chicken and vegetables.",
+      "duration": 40,
+      "materials": "Large pot or Dutch oven, Wooden spoon or spatula, Knife and cutting board, Measuring cups and spoons, Ladle",
+      "instructions": "1. Melt butter in pot, cook chicken until browned. 2. Add onion, carrots, celery, sauté 5–7 min. 3. Sprinkle flour, stir 1–2 min. 4. Add broth, bring to boil. 5. Simmer 15–20 min. 6. Stir in cream and nutmeg, simmer 5 min. 7. Adjust salt and pepper, serve hot.",
+      "tips": "Use rotisserie chicken for quicker prep. Let soup cool slightly for thicker consistency. Leftovers taste better next day!",
+      "image": "static/images/ChickenCreamSoup.jpeg"
+    }
+  },
+  {
+    "model": "my_app.recipe",
+    "fields": {
+      "title": "Chocolate Cake",
+      "course": "dessert",
+      "ingredients": "1 ¾ cups all-purpose flour, ¾ cup unsweetened cocoa powder, 2 cups granulated sugar, 1 ½ tsp baking powder, 1 ½ tsp baking soda, 1 tsp salt, 2 large eggs, 1 cup milk, ½ cup vegetable oil or melted butter, 2 tsp vanilla extract, 1 cup hot water or brewed coffee",
+      "description": "A rich and moist chocolate dessert perfect for any occasion.",
+      "duration": 60,
+      "materials": "Mixing bowls, Whisk or electric mixer, Measuring cups and spoons, Two 9-inch round cake pans, Rubber spatula, Cooling rack, Oven, Non-stick spray or butter and flour",
+      "instructions": "1. Preheat oven to 350°F (175°C). Grease and flour pans. 2. Whisk together dry ingredients. 3. Add eggs, milk, oil, vanilla, mix until combined. 4. Stir in hot water or coffee. 5. Pour into pans, bake 30–35 min. 6. Cool 10 min, transfer to rack. 7. Frost when cool.",
+      "tips": "Use room temperature eggs and milk. Don’t overmix. Coffee deepens chocolate flavor.",
+      "image": "static/images/ChocolateCake.jpg"
+    }
+  },
+  {
+    "model": "my_app.recipe",
+    "fields": {
+      "title": "Fresh Salad",
+      "course": "appetizer",
+      "ingredients": "2 cups mixed greens, 1 cucumber sliced, 1 cup cherry tomatoes halved, 1/2 red onion sliced, 1/2 cup shredded carrots, 1 avocado diced (optional), 1/4 cup feta or mozzarella (optional), 2 tbsp olive oil, 1 tbsp lemon juice or balsamic vinegar, Salt and pepper",
+      "description": "This green salad recipe is simple, but packed with delicious textures and flavors.",
+      "duration": 10,
+      "materials": "Cutting board and knife, Large mixing bowl, Salad tongs, Measuring spoons, Small bowl or jar",
+      "instructions": "1. Wash and dry vegetables. 2. Chop/slice and place in bowl. 3. Whisk dressing ingredients. 4. Toss salad with dressing. 5. Add avocado and cheese before serving. 6. Serve fresh.",
+      "tips": "Add nuts or seeds for crunch. Use fresh herbs for extra flavor.",
+      "image": "static/images/fresh-salad.jpeg"
+    }
+  },
+  {
+    "model": "my_app.recipe",
+    "fields": {
+      "title": "Lasagna",
+      "course": "main course",
+      "ingredients": "12 lasagna noodles, 1 lb ground beef, 2 cups tomato sauce, 1 onion diced, 2–3 cloves garlic minced, 1 ½ cups ricotta cheese, 2 cups mozzarella cheese, ½ cup Parmesan cheese, 1 tbsp olive oil, Salt and pepper, Fresh basil/oregano/parsley (optional)",
+      "description": "Layered pasta with meat sauce and cheese.",
+      "duration": 75,
+      "materials": "Large pot, Skillet, Medium bowl, 9x13 inch baking dish, Wooden spoon, Aluminum foil, Oven, Knife & cutting board",
+      "instructions": "1. Boil noodles if needed. 2. Sauté onions, garlic, add beef, brown. Add tomato sauce, simmer. 3. Mix ricotta with half Parmesan. 4. Layer sauce, noodles, ricotta, mozzarella, repeat. 5. Top with mozzarella and Parmesan. 6. Bake 30 min covered, 15 min uncovered. 7. Rest 10–15 min before slicing.",
+      "tips": "Let lasagna rest before slicing. Add fresh herbs for garnish.",
+      "image": "static/images/Lasagna.jpg"
+    }
+  },
+  {
+    "model": "my_app.recipe",
+    "fields": {
+      "title": "Tomato Soup",
+      "course": "appetizer",
+      "ingredients": "2 tbsp olive oil, 1 onion chopped, 2 garlic cloves minced, 800g canned tomatoes, 2 cups vegetable broth, 1 tsp sugar (optional), Salt and pepper, 1/2 tsp dried basil or fresh basil, 1/4 cup cream or milk (optional)",
+      "description": "A soup with tomatoes as the primary ingredient. Can be served hot or cold.",
+      "duration": 35,
+      "materials": "Saucepan or soup pot, Cutting board and knife, Wooden spoon, Blender, Ladle, Measuring cups and spoons, Serving bowls",
+      "instructions": "1. Heat oil, sauté onion 5 min, add garlic. 2. Add tomatoes, broth, sugar, basil, salt, pepper. Boil, then simmer 20 min. 3. Blend until smooth. 4. Stir in cream/milk if using. 5. Serve hot with garnish.",
+      "tips": "Garnish with fresh basil, cream, or croutons.",
+      "image": "static/images/tomato.jpeg"
+    }
+  }
+]

@@ -1,0 +1,307 @@
+/* recipe-display.css - Styles for displaying recipes in a card layout */
+
+:root {
+  --primary-color: #8B0000;      /* Deep red */
+  --primary-light: #C41E3A;      /* Lighter red */
+  --primary-dark: #570000;       /* Darker red */
+  --accent-color: #FFB74D;       /* Warm orange */
+  --text-dark: #2C3E50;          /* Dark blue-gray */
+  --text-light: #ECF0F1;         /* Light gray */
+  --background-light: #FFFFFF;    /* White */
+  --background-dark: #F5F5F5;    /* Light gray */
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+h1, h2, h3, .recipe-title, .card_title {
+  font-family: 'Playfair Display', serif;
+}
+
+body {
+  background: #ffffff url("../images/Home.jpg") no-repeat center/cover fixed;
+  color: #333;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: -2%;
+  left: -2%;
+  width: 105%;
+  height: 105%;
+  background: inherit;
+  filter: blur(5px) brightness(60%);
+  z-index: -1;
+}
+
+/* Header styles */
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: rgba(255, 255, 255, 1);
+  height: 4rem;
+  padding: 0 30px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 40px;
+  /* optional: set a minimum height */
+}
+
+/* Center navigation */
+.center-nav {
+  display: flex;
+  list-style: none;
+}
+
+.center-nav li {
+  margin: 0 15px;
+}
+
+.center-nav li a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-size: 18px;
+  font-weight: 600;
+  transition: color 0.3s ease-in-out;
+}
+
+.center-nav li a:hover {
+  color: var(--primary-light);
+}
+
+/* Right navigation */
+.right-nav {
+  display: flex;
+  list-style: none;
+}
+
+.right-nav li {
+  margin-left: 15px;
+}
+
+.right-nav li a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  transition: color 0.3s ease-in-out;
+}
+
+.right-nav li .signup {
+  background: var(--primary-color);
+  color: var(--text-light);
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: color 0.3s ease-out;
+}
+
+.right-nav .signup:hover {
+  background: var(--primary-light);
+}
+
+.logo div {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 55px;
+}
+
+.logo p {
+  display: inline-block;
+  font-family: "Imperial Script", cursive;
+  font-weight: 1000;
+  font-style: normal;
+  font-size: 40px;
+  color: var(--primary-color);
+  margin: 1.3rem 0px 0.8rem 10px;
+}
+.logo p span {
+  font-size: 20px;
+  color: var(--text-dark);
+}
+/* Main */
+.main,
+.recipe-page {
+  position: relative;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.812);
+  z-index: 1;
+}
+
+/* Heading and paragraph styles */
+.main h1,
+.recipe-page h1 {
+  font-size: 50px;
+  margin-bottom: 15px;
+  color: white;
+}
+
+.main p,
+.recipe-page p {
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.recipe-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 24px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+}
+
+#recipe-list {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    justify-content: center;
+}
+
+.recipe-list-header {
+    font-size: 2.6rem;
+    font-family: 'Imperial Script', cursive;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 32px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    text-shadow: 0 2px 8px rgba(139,0,0,0.08);
+}
+
+.recipe-card {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    background: #faf9f6;
+    border-radius: 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    margin-bottom: 24px;
+    width: 100%;
+    max-width: 700px;
+    min-height: 180px;
+    overflow: hidden;
+}
+
+.image-wrapper {
+    width: 180px;
+    height: 180px;
+    overflow: hidden;
+    border-radius: 12px 0 0 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    background: #f8f8f8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px 0 0 12px;
+}
+
+.card-content {
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+.recipe-title {
+    font-family: 'Imperial Script', cursive;
+    font-size: 2rem;
+    color: #b85c38;
+    margin-bottom: 8px;
+}
+
+.recipe-category {
+    color: #6c757d;
+    font-size: 1rem;
+    margin-bottom: 4px;
+}
+
+.card-content p {
+    margin: 0 0 4px 0;
+    font-size: 1rem;
+    color: #333;
+}
+
+.view-recipe-btn {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 10px 22px;
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    box-shadow: 0 2px 8px rgba(139,0,0,0.08);
+    text-align: center;
+    align-self: center;
+}
+
+.view-recipe-btn:hover, .view-recipe-btn:focus {
+    background: var(--primary-light);
+    color: #fff;
+    transform: scale(1.05);
+    text-decoration: none;
+    outline: none;
+}
+
+@media (max-width: 900px) {
+    .recipe-card {
+        flex-direction: column;
+        max-width: 95vw;
+    }
+    .image-wrapper {
+        width: 100%;
+        height: 180px;
+        border-radius: 12px 12px 0 0;
+    }
+    .image-wrapper img {
+        border-radius: 12px 12px 0 0;
+    }
+}
