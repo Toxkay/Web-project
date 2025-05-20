@@ -4,6 +4,85 @@
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'accounts/auth.css' %}">
 <link rel="stylesheet" href="{% static 'CSS/styles.css' %}">
+<style>
+    .input-with-icon {
+        position: relative;
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    .input-with-icon i:not(.fa-eye):not(.fa-eye-slash) {
+        position: absolute;
+        left: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #666;
+        transition: color 0.3s ease;
+        z-index: 1;
+    }
+
+    .input-with-icon input {
+        width: 100%;
+        padding: 10px 40px 10px 35px !important;
+        box-sizing: border-box;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .input-with-icon input:focus {
+        border-color: #4a90e2;
+        box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+    }
+
+    .input-with-icon input:focus + i {
+        color: #4a90e2;
+    }
+
+    .toggle-password {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        padding: 0;
+        margin: 0;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #666;
+        cursor: pointer;
+        z-index: 1;
+    }
+
+    .toggle-password:hover {
+        color: #4a90e2;
+    }
+
+    .form-group {
+        margin-bottom: 1.2rem;
+    }
+
+    .auth-btn {
+        margin-top: 0.5rem;
+        transition: transform 0.2s ease;
+    }
+
+    .auth-btn:hover {
+        transform: translateY(-1px);
+    }
+
+    .error-message {
+        background-color: #fff3f3;
+        color: #dc3545;
+        padding: 10px;
+        border-radius: 4px;
+        margin-bottom: 1rem;
+        border: 1px solid #ffcdd2;
+    }
+</style>
 {% endblock %}
 
 {% block content %}
@@ -12,7 +91,7 @@
     <form method="post" autocomplete="off">
         {% csrf_token %}
         {% if form.errors %}
-            <div class="error-message" style="display: block;">{{ form.errors|striptags }}</div>
+        <div class="error-message" style="display: block;">{{ form.errors|striptags }}</div>
         {% endif %}
         <div class="form-group">
             <div class="input-with-icon">
@@ -34,19 +113,18 @@
     </form>
 </section>
 <script>
-// Password toggle logic
-const toggleBtns = document.querySelectorAll('.toggle-password');
-toggleBtns.forEach(btn => {
-    btn.addEventListener('click', function() {
-        const input = this.parentElement.querySelector('input');
-        if (input.type === 'password') {
-            input.type = 'text';
-            this.querySelector('i').classList.add('fa-eye-slash');
-        } else {
-            input.type = 'password';
-            this.querySelector('i').classList.remove('fa-eye-slash');
-        }
+    const toggleBtns = document.querySelectorAll('.toggle-password');
+    toggleBtns.forEach(btn => {
+        btn.addEventListener('click', function () {
+            const input = this.parentElement.querySelector('input');
+            if (input.type === 'password') {
+                input.type = 'text';
+                this.querySelector('i').classList.add('fa-eye-slash');
+            } else {
+                input.type = 'password';
+                this.querySelector('i').classList.remove('fa-eye-slash');
+            }
+        });
     });
-});
 </script>
 {% endblock %}

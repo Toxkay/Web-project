@@ -3,7 +3,6 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, logout
 from .forms import CustomUserCreationForm
 
-
 def signup(request):
     if request.method == 'POST':
         form = CustomUserCreationForm(request.POST)
@@ -14,7 +13,6 @@ def signup(request):
     else:
         form = CustomUserCreationForm()
     return render(request, 'signup.html', {'form': form})
-
 
 def login_view(request):
     if request.method == 'POST':
@@ -28,7 +26,6 @@ def login_view(request):
         form.fields['username'].widget.attrs['placeholder'] = 'Username'
         form.fields['password'].widget.attrs['placeholder'] = 'Password'
     return render(request, 'login.html', {'form': form})
-
 
 def logout_view(request):
     if request.method == 'POST':
