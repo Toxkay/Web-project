@@ -12,12 +12,30 @@
     <form method="post" autocomplete="off">
         {% csrf_token %}
         {% if form.errors %}
-            <div class="error-message" style="display: block;">{{ form.errors|striptags }}</div>
+        <div class="error-message" style="display: block;">{{ form.errors|striptags }}</div>
         {% endif %}
         <div class="form-group">
             <div class="input-with-icon">
                 <i class="fas fa-user"></i>
+                {{ form.first_name }}
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-with-icon">
+                <i class="fas fa-user"></i>
+                {{ form.last_name }}
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-with-icon">
+                <i class="fas fa-user"></i>
                 {{ form.username }}
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-with-icon">
+                <i class="fas fa-envelope"></i>
+                {{ form.email }}
             </div>
         </div>
         <div class="form-group">
@@ -33,6 +51,9 @@
             <div class="input-with-icon">
                 <i class="fas fa-lock"></i>
                 {{ form.password2 }}
+                <button type="button" class="toggle-password" aria-label="Toggle password visibility">
+                    <i class="fas fa-eye"></i>
+                </button>
             </div>
         </div>
         <button type="submit" class="auth-btn">Sign Up</button>
@@ -40,19 +61,19 @@
     </form>
 </section>
 <script>
-// Password toggle logic
-const toggleBtns = document.querySelectorAll('.toggle-password');
-toggleBtns.forEach(btn => {
-    btn.addEventListener('click', function() {
-        const input = this.parentElement.querySelector('input');
-        if (input.type === 'password') {
-            input.type = 'text';
-            this.querySelector('i').classList.add('fa-eye-slash');
-        } else {
-            input.type = 'password';
-            this.querySelector('i').classList.remove('fa-eye-slash');
-        }
+    // Password toggle logic
+    const toggleBtns = document.querySelectorAll('.toggle-password');
+    toggleBtns.forEach(btn => {
+        btn.addEventListener('click', function () {
+            const input = this.parentElement.querySelector('input');
+            if (input.type === 'password') {
+                input.type = 'text';
+                this.querySelector('i').classList.add('fa-eye-slash');
+            } else {
+                input.type = 'password';
+                this.querySelector('i').classList.remove('fa-eye-slash');
+            }
+        });
     });
-});
 </script>
 {% endblock %}
