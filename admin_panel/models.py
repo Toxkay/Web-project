@@ -1,3 +1,1 @@
-from django.db import models
-
-# Create your models here.
+# This file intentionally left blank. Use Recipe from recipes.models

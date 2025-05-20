@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="{% static 'images/platful_iconn.png' %}" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Recipe</title>
+    <link rel="stylesheet" href="{% static 'CSS/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/admin-dashboard.css' %}">
+</head>
+<body>
+    {% include 'includes/header.html' %}
+    <main>
+        <section id="add-recipe">
+            <h2>Edit Recipe</h2>
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <label for="recipe-name">Recipe Name:</label>
+                <input type="text" id="recipe-name" name="recipe_name" value="{{ recipe.title }}" required>
+                <label for="course">Course Name:</label>
+                <select id="course" name="course">
+                    <option value="appetizers" {% if recipe.course == 'appetizers' %}selected{% endif %}>Appetizers</option>
+                    <option value="main course" {% if recipe.course == 'main course' %}selected{% endif %}>Main Course</option>
+                    <option value="dessert" {% if recipe.course == 'dessert' %}selected{% endif %}>Dessert</option>
+                </select>
+                <label for="ingredients">Ingredients:</label>
+                <textarea id="ingredients" name="ingredients" required>{{ recipe.ingredients }}</textarea>
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" required>{{ recipe.description }}</textarea>
+                <label for="duration">Duration in minutes:</label>
+                <input type="text" id="duration" name="duration" value="{{ recipe.duration }}" required>
+                <label for="image">Recipe Image:</label>
+                <input type="file" id="image" name="image" accept="image/*">
+                {% if recipe.image %}
+                <img src="{{ recipe.image.url }}" alt="Current Image" width="120" style="margin:10px 0;">
+                {% endif %}
+                <label>Materials (comma-separated)</label>
+                <input type="text" id="materials" name="materials" value="{{ recipe.materials }}">
+                <label>Instructions</label>
+                <textarea id="instructions" name="instructions">{{ recipe.instructions }}</textarea>
+                <label>Tips (optional)</label>
+                <textarea id="tips" name="tips">{{ recipe.tips }}</textarea>
+                <button type="submit">Save Changes</button>
+            </form>
+        </section>
+    </main>
+    {% include 'includes/footer.html' %}
+</body>
+</html>
