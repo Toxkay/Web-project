@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'core',
     'recipes',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -57,7 +58,11 @@ ROOT_URLCONF = 'plateful.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            BASE_DIR / 'core' / 'templates',
+            BASE_DIR / 'accounts' / 'templates',
+            BASE_DIR / 'recipes' / 'templates',
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -119,6 +124,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
+
+# Add this to enable collectstatic
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
