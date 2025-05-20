@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block title %}{{ recipe.title }} | Recipe Details{% endblock %}
+{% block content %}
+<div class="recipe-details-container" style="margin-top:120px; display:flex; justify-content:center; align-items:flex-start; min-height:70vh;">
+    <article class="recipe-card visible" style="width:100%; max-width:700px;">
+        <div class="image-wrapper" style="height:320px;">
+            <img src="{{ recipe.image.url|default:'/static/images/placeholder.jpg' }}" alt="{{ recipe.title }}" loading="lazy" style="height:100%; width:100%; object-fit:cover; border-radius:16px 16px 0 0;" />
+            {% if recipe.duration %}<span class="badge">{{ recipe.duration }} min</span>{% endif %}
+        </div>
+        <div class="card-content" style="padding:32px 24px;">
+            <h1 class="recipe-title" style="font-size:2.2rem; margin-bottom:10px;">{{ recipe.title }}</h1>
+            <p class="recipe-category" style="font-size:1.1rem; color:var(--primary-color); font-weight:600; margin-bottom:10px;">{{ recipe.course }}</p>
+            <p class="recipe-description" style="margin-bottom:18px; color:var(--text-dark);">{{ recipe.description }}</p>
+            <h3 style="margin-top:18px;">Ingredients</h3>
+            <ul style="margin-bottom:12px;">
+                {% for ingredient in recipe.ingredients.splitlines %}
+                    <li>{{ ingredient }}</li>
+                {% endfor %}
+            </ul>
+            {% if recipe.materials %}
+            <h3>Materials</h3>
+            <ul style="margin-bottom:12px;">
+                {% for material in recipe.materials.splitlines %}
+                    <li>{{ material }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            {% if recipe.instructions %}
+            <h3>Instructions</h3>
+            <ul style="margin-bottom:12px;">
+                {% for instruction in recipe.instructions.splitlines %}
+                    <li>{{ instruction }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            {% if recipe.tips %}
+            <h3>Tips</h3>
+            <ul style="margin-bottom:12px;">
+                {% for tip in recipe.tips.splitlines %}
+                    <li>{{ tip }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            <a href="{% url 'recipes' %}" class="view-button" style="margin-top:18px;">← Back to Recipe List</a>
+        </div>
+    </article>
+</div>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}Recipe List{% endblock %}
+{% block content %}
+<div class="recipe-container">
+    {% if recipes %}
+        {% for recipe in recipes %}
+        <article class="recipe-card visible">
+            <div class="image-wrapper">
+                <img src="{{ recipe.image.url|default:'/static/images/placeholder.jpg' }}" alt="{{ recipe.title }}" loading="lazy" />
+                {% if recipe.duration %}<span class="badge">{{ recipe.duration }} min</span>{% endif %}
+            </div>
+            <div class="card-content">
+                <h3 class="recipe-title">{{ recipe.title }}</h3>
+                <p class="recipe-category">{{ recipe.course }}</p>
+                <a href="{% url 'recipe-details' recipe.id %}" class="view-button">View Recipe</a>
+            </div>
+        </article>
+        {% endfor %}
+    {% else %}
+        <p class="no-recipes">No recipes found.</p>
+    {% endif %}
+</div>
+{% endblock %}

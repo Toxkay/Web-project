@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render
 from recipes.models import Recipe
 
 # Create your views here.
@@ -16,6 +16,10 @@ def home(request):
         }
     recipes_json = [recipe_to_dict(r) for r in recipes]
     import json
-    return render(request, "Home.html", {
+    return render(request, "home.html", {
         'recipes_json': json.dumps(recipes_json),
     })
+
+
+def about(request):
+    return render(request, "about.html")
