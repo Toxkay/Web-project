@@ -13,6 +13,9 @@
                 <h3 class="recipe-title">{{ recipe.title }}</h3>
                 <p class="recipe-category">{{ recipe.course }}</p>
                 <a href="{% url 'recipe-details' recipe.id %}" class="view-button">View Recipe</a>
+                {% if user.is_authenticated %}
+                    <button class="favorite-btn" data-recipe-id="{{ recipe.id }}" title="{% if recipe.id in user_favorites_ids %}Remove from favorites{% else %}Add to favorites{% endif %}">{% if recipe.id in user_favorites_ids %}❤️{% else %}🤍{% endif %}</button>
+                {% endif %}
             </div>
         </article>
         {% endfor %}

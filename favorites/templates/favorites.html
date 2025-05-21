@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}My Favorite Recipes{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'CSS/search.css' %}" /> 
+<style>
+    .favorites-heading, .no-favorites-message {
+        text-align: center;
+        color: white;
+        padding-top: 70px;
+    }
+    .no-favorites-message {
+        padding-bottom: 20px;
+    }
+    .favorite-btn {
+        background: none;
+        border: none;
+        color: var(--primary-color);
+        font-size: 1.5rem;
+        cursor: pointer;
+        padding: 5px;
+        line-height: 1;
+    }
+    .favorite-btn:hover {
+        color: var(--primary-dark);
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 class="favorites-heading">My Favorite Recipes</h2>
+    {% if favorite_recipes %}
+        <div class="recipe-container">
+            {% for fav in favorite_recipes %}
+            <article class="recipe-card visible" data-recipe-id="{{ fav.recipe.id }}">
+                <div class="image-wrapper">
+                    <img src="{{ fav.recipe.image.url|default:'/static/images/placeholder.jpg' }}" alt="{{ fav.recipe.title }}" loading="lazy" />
+                    {% if fav.recipe.duration %}<span class="badge">{{ fav.recipe.duration }} min</span>{% endif %}
+                </div>
+                <div class="card-content">
+                    <h3 class="recipe-title">{{ fav.recipe.title }}</h3>
+                    <p class="recipe-category">{{ fav.recipe.course }}</p>
+                    <a href="{% url 'recipe-details' fav.recipe.id %}" class="view-button">View Recipe</a>
+                    <button class="favorite-btn" data-recipe-id="{{ fav.recipe.id }}" title="Remove from favorites">❤️</button>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p class="no-favorites-message">You haven't added any recipes to your favorites yet.</p>
+    {% endif %}
+</div>
+{% endblock %}

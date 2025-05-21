@@ -14,9 +14,12 @@
 <body>
   {% include "includes/header.html" %}
 
-  {% block content %}
-  {% endblock %}
+  <div class="main-content-wrapper"> {# Added this wrapper for sticky footer #}
+    {% block content %}
+    {% endblock %}
+  </div> {# End of main-content-wrapper #}
 
   {% include "includes/footer.html" %}
+  <script src="{% static 'JS/favorites.js' %}" defer></script> {# Moved JS script here #}
 </body>
 </html>

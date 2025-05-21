@@ -55,14 +55,25 @@ def search(request):
         )
     else:
         recipes = Recipe.objects.all()
+    user_favorites_ids = []
+    if request.user.is_authenticated:
+        from favorites.models import Favorite
+        user_favorites_ids = list(Favorite.objects.filter(user=request.user).values_list('recipe_id', flat=True))
     for recipe in recipes:
         if isinstance(recipe.ingredients, str):
             recipe.ingredients = [i.strip() for i in recipe.ingredients.split(',') if i.strip()]
-    return render(request, "search.html", {'recipes': recipes, 'query': query})
+    return render(request, "search.html", {'recipes': recipes, 'query': query, 'user_favorites_ids': user_favorites_ids})
 
 def recipes(request):
     recipes = Recipe.objects.all()
-    return render(request, "recipes.html", {"recipes": recipes})
+    user_favorites_ids = []
+    if request.user.is_authenticated:
+        from favorites.models import Favorite
+        user_favorites_ids = list(Favorite.objects.filter(user=request.user).values_list('recipe_id', flat=True))
+    for recipe in recipes:
+        if isinstance(recipe.ingredients, str):
+            recipe.ingredients = [i.strip() for i in recipe.ingredients.split(',') if i.strip()]
+    return render(request, "recipes.html", {"recipes": recipes, 'user_favorites_ids': user_favorites_ids})
 
 def recipe_detail_api(request, recipe_id):
     try:

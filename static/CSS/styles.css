@@ -28,6 +28,9 @@ h1, h2, h3, .recipe-title, .card_title {
 body {
   background: #ffffff url("/static/images/Home.jpg") no-repeat center/cover fixed;
   color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 body::before {
@@ -1214,4 +1217,12 @@ slider {
 
 .skeleton-description:last-child {
     width: 80%;
+}
+
+.main-content-wrapper {
+  flex: 1 0 auto;
+}
+
+.footer {
+  margin-top: auto;
 }
