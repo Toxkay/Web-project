@@ -1,16 +1,13 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="icon" href="{% static 'images/platful_iconn.png' %}" type="image/png">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard</title>
-    <link rel="stylesheet" href="{% static 'CSS/styles.css' %}">
-    <link rel="stylesheet" href="{% static 'CSS/admin-dashboard.css' %}">
 
-</head>
-<body>
+{% block title %}Admin Dashboard{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'CSS/admin-dashboard.css' %}">
+{% endblock %}
+
+{% block content %}
     {% if success %}
     <div id="success-message" style="position: fixed; top: 30px; left: 50%; transform: translateX(-50%); background: #28a745; color: #fff; padding: 18px 36px; border-radius: 8px; font-size: 1.2rem; font-weight: 600; z-index: 9999; box-shadow: 0 4px 24px rgba(0,0,0,0.15);">
         Recipe added successfully!
@@ -33,7 +30,6 @@
       }, 2500);
     </script>
     {% endif %}
-    {% include 'includes/header.html' %}
     <main>
         <section id="add-recipe">
             <h2>Add New Recipe</h2>
@@ -120,7 +116,4 @@
         document.getElementById('delete-modal').style.display = 'none';
       };
     </script>
-    {% include 'includes/footer.html' %}
-    <!-- <script src="{% static 'JS/admin-dashboard.js' %}"></script> -->
-</body>
-</html>
+{% endblock %}

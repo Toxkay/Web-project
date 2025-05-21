@@ -1,16 +1,13 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="icon" href="{% static 'images/platful_iconn.png' %}" type="image/png">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Recipe</title>
-    <link rel="stylesheet" href="{% static 'CSS/styles.css' %}">
-    <link rel="stylesheet" href="{% static 'CSS/admin-dashboard.css' %}">
-</head>
-<body>
-    {% include 'includes/header.html' %}
+
+{% block title %}Edit Recipe{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'CSS/admin-dashboard.css' %}">
+{% endblock %}
+
+{% block content %}
     <main>
         <section id="add-recipe">
             <h2>Edit Recipe</h2>
@@ -45,6 +42,4 @@
             </form>
         </section>
     </main>
-    {% include 'includes/footer.html' %}
-</body>
-</html>
+{% endblock %}
