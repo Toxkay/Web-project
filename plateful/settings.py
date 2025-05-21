@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'core',
     'recipes',
     'accounts',
+    'admin_panel', 
 ]
 
 MIDDLEWARE = [

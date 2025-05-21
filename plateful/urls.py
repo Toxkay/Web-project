@@ -25,6 +25,7 @@ urlpatterns = [
     path('recipes/', include('recipes.urls')),
     path('accounts/', include('accounts.urls')),
     path('favorites/', include('favorites.urls')),
+    path('', include('admin_panel.urls')),  # Added for admin dashboard
 ]
 
 if settings.DEBUG:
