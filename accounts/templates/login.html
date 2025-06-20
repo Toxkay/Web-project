@@ -82,6 +82,43 @@
         margin-bottom: 1rem;
         border: 1px solid #ffcdd2;
     }
+
+    .auth-link {
+        color: #4a90e2;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .auth-link:hover {
+        color: #357ae8;
+    }
+
+    .auth-link-text {
+        margin: 0.5rem 0;
+        font-size: 0.9rem;
+        text-align: center;
+    }
+
+    .auth-link-btns {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-top: 1rem;
+    }
+
+    .auth-btn-link {
+        background-color: #4a90e2;
+        color: white;
+        padding: 10px;
+        border-radius: 4px;
+        text-align: center;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+    }
+
+    .auth-btn-link:hover {
+        background-color: #357ae8;
+    }
 </style>
 {% endblock %}
 
@@ -109,7 +146,10 @@
             </div>
         </div>
         <button type="submit" class="auth-btn">Login</button>
-        <p>Don't have an account? <a href="{% url 'signup' %}">Sign Up</a></p>
+        <div class="auth-link-btns">
+            <a class="auth-btn-link" href="{% url 'signup' %}">Don't have an account? Sign Up</a>
+            <a class="auth-btn-link" href="{% url 'forgot_password' %}">Forgot Password?</a>
+        </div>
     </form>
 </section>
 <script>
