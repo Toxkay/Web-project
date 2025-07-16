@@ -59,10 +59,6 @@ Welcome to Platful, a collaborative web project developed by our team to help us
 - `static/CSS/` - CSS styles for theming and layout
 - `templates/` - HTML templates for rendering pages
 
-## Screenshots
-
-_Add your own screenshots here!_
-
 ## Contributing
 
 1. Fork this repository
