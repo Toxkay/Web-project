@@ -67,3 +67,42 @@ Welcome to Platful, a collaborative web project developed by our team to help us
 4. Open a pull request
 
 ---
+
+## Deploying to Vercel
+
+This repo contains a minimal configuration for deploying Django on Vercel (serverless) suitable for demos and light usage.
+
+Key files added:
+- `vercel.json` – build + route config
+- `api/index.py` – serverless function wrapping Django WSGI `app`
+- Updated `settings.py` to read environment variables
+
+### Environment Variables (set in Vercel Project Settings)
+Name | Example | Purpose
+-----|---------|--------
+`DJANGO_SECRET_KEY` | (generate a long random string) | Django cryptographic signing
+`DJANGO_DEBUG` | 0 | 1 enables debug (avoid in prod)
+`DJANGO_ALLOWED_HOSTS` | your-app.vercel.app,localhost | Comma separated hostnames
+
+Optional later: database credentials if you switch from SQLite.
+
+### Deploy Steps (CLI)
+```
+npm i -g vercel
+vercel login
+vercel        # preview deployment
+vercel --prod # production deployment
+```
+
+### Static Files
+Collected during build via `collectstatic` into `staticfiles/` and served via a static route. Redeploy after changing static assets.
+
+### Database & Media Caveats
+SQLite + uploaded media are not durable on serverless file system. For production use Postgres (e.g. Neon, Supabase) and S3-compatible storage, adjusting `DATABASES` and media storage backend.
+
+### Next Improvements
+- Add Postgres driver (`psycopg[binary]`) & `DATABASE_URL` parsing
+- Configure `django-storages` for media persistence
+- Add HSTS and stricter security headers after custom domain + HTTPS
+
+---
